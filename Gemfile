@@ -2,12 +2,12 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 
-platform :ruby do
-    gem 'therubyracer', require: false
-end
-
 group :development, :test do
   gem 'sqlite3'
+
+  platform :ruby do
+    gem 'therubyracer'
+  end
 end
 
 group :development do
