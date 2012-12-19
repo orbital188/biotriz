@@ -1,0 +1,19 @@
+<% title "Sizes" %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+  <% for size in @sizes %>
+    <tr>
+      <td><%= size.title %></td>
+      <td><%= size.description %></td>
+      <td><%= link_to "Show", size %></td>
+      <td><%= link_to "Edit", edit_size_path(size) %></td>
+      <td><%= link_to "Destroy", size, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Size", new_size_path %></p>

@@ -1,0 +1,16 @@
+<% title "Size" %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @size.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @size.description %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_size_path(@size) %> |
+  <%= link_to "Destroy", @size, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", sizes_path %>
+</p>
