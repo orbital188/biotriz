@@ -16,6 +16,10 @@ group :development do
   gem "annotate"
 end
 
+group :test do
+  gem "minitest"
+end
+
 group :production do
   gem 'pg'
 end

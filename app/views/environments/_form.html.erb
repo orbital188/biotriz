@@ -1,0 +1,17 @@
+<%= form_for @environment do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :parent_id %><br />
+    <%= select :environment, :parent_id,
+        Environment.all.collect { |e| [e.title, e.id] }, include_blank: true %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

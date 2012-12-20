@@ -1,4 +1,6 @@
 Biotriz::Application.routes.draw do
+  resources :environments
+
   resources :sizes
 
   # The priority is based upon order of creation:

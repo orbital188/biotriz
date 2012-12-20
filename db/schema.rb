@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121220084558) do
+ActiveRecord::Schema.define(:version => 20121220091607) do
+
+  create_table "environments", :force => true do |t|
+    t.string   "title",       :limit => 250, :null => false
+    t.text     "description"
+    t.string   "ancestry"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  add_index "environments", ["ancestry"], :name => "index_environments_on_ancestry"
 
   create_table "sizes", :force => true do |t|
     t.string   "title",       :limit => 250, :null => false

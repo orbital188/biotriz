@@ -58,6 +58,7 @@ GEM
       treetop (~> 1.4.8)
     metaclass (0.0.1)
     mime-types (1.19)
+    minitest (4.2.0)
     mocha (0.13.1)
       metaclass (~> 0.0.1)
     multi_json (1.5.0)
@@ -122,6 +123,7 @@ DEPENDENCIES
   annotate
   coffee-rails (~> 3.2.1)
   jquery-rails
+  minitest
   mocha
   nifty-generators
   pg
