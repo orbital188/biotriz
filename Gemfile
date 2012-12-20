@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
+gem "ancestry"
 
 group :development, :test do
   gem 'sqlite3'
@@ -12,7 +13,6 @@ end
 
 group :development do
   gem "nifty-generators"
-  gem "ancestry"
   gem "annotate"
 end
 
