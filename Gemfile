@@ -13,6 +13,7 @@ end
 group :development do
   gem "nifty-generators"
   gem "ancestry"
+  gem "annotate"
 end
 
 group :production do
