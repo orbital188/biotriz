@@ -1,4 +1,6 @@
 class EnvironmentsController < ApplicationController
+  before_filter :login_required
+
   def index
     @environments = Environment.all
   end

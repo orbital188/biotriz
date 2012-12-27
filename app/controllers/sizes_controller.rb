@@ -1,4 +1,6 @@
 class SizesController < ApplicationController
+  before_filter :login_required
+
   def index
     @sizes = Size.all
   end

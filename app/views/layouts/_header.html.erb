@@ -1,0 +1,14 @@
+<header class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "Biotriz", "/" %>
+
+      <% if logged_in? %>
+        <%= link_to "Logout", "/logout" %>
+      <% else %>
+        <%= link_to "Login", "/login" %>
+      <% end %>
+
+    </div>
+  </div>
+</header>
