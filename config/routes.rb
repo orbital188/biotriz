@@ -1,5 +1,6 @@
 Biotriz::Application.routes.draw do
   match 'user/edit' => 'users#edit', :as => :edit_current_user
+  root :to => 'homes#index'
 
   # Temporally disabled
   # match 'signup' => 'users#new', :as => :signup
@@ -10,7 +11,7 @@ Biotriz::Application.routes.draw do
 
   resources :sessions
 
-  resources :users
+  resources :users, except: :new # new users are not allowed for now
 
   resources :environments
 
@@ -62,10 +63,6 @@ Biotriz::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  root :to => 'homes#index'
 
   # See how all your routes lay out with "rake routes"
 
