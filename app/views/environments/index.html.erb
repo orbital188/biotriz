@@ -1,21 +1,25 @@
 <% title "Environments" %>
 
-<table>
-  <tr>
-    <th>Parent</th>
-    <th>Title</th>
-    <th>Description</th>
-  </tr>
-  <% for environment in @environments %>
-    <tr>
-      <td><%= environment.parent.title if environment.parent %></td>
-      <td><%= environment.title %></td>
-      <td><%= simple_format environment.description %></td>
-      <td><%= link_to "Show", environment %></td>
-      <td><%= link_to "Edit", edit_environment_path(environment) %></td>
-      <td><%= link_to "Destroy", environment, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="row">
+  <div class="span8 offset2">
+    <table>
+      <tr>
+        <th>Parent</th>
+        <th>Title</th>
+        <th>Description</th>
+      </tr>
+      <% for environment in @environments %>
+        <tr>
+          <td><%= environment.parent.title if environment.parent %></td>
+          <td><%= environment.title %></td>
+          <td><%= simple_format environment.description %></td>
+          <td><%= link_to "Show", environment %></td>
+          <td><%= link_to "Edit", edit_environment_path(environment) %></td>
+          <td><%= link_to "Destroy", environment, :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+      <% end %>
+    </table>
 
-<p><%= link_to "New Environment", new_environment_path %></p>
+    <p><%= link_to "New Environment", new_environment_path %></p>
+  </div>
+</div>
