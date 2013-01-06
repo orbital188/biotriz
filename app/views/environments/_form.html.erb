@@ -1,18 +1,21 @@
-<%= form_for @environment do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :parent_id %><br />
-    <%= hierarchical_select :environment, :parent_id, Environment,
-        include_blank: true %>
-
-  </p>
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p><%= f.submit %></p>
-<% end %>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for @environment do |f| %>
+      <%= f.error_messages %>
+      <p>
+        <%= f.label :parent_id %><br />
+        <%= hierarchical_select :environment, :parent_id, Environment,
+            include_blank: true %>
+      </p>
+      <p>
+        <%= f.label :title %><br />
+        <%= f.text_field :title %>
+      </p>
+      <p>
+        <%= f.label :description %><br />
+        <%= f.text_area :description %>
+      </p>
+      <p><%= f.submit class: "btn btn-large btn-primary"%></p>
+    <% end %>
+  </div>
+</div>
