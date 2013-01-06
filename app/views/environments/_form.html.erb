@@ -2,8 +2,9 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :parent_id %><br />
-    <%= select :environment, :parent_id,
-        Environment.all.collect { |e| [e.title, e.id] }, include_blank: true %>
+    <%= hierarchical_select :environment, :parent_id, Environment,
+        include_blank: true %>
+
   </p>
   <p>
     <%= f.label :title %><br />

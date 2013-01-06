@@ -32,7 +32,7 @@ namespace :db do
       { title: 'Solid', description: 'Sub-surface ecosystems; rockes, lithosphere',
         children: [
           { title: 'Balk solid', description: '', children: [] },
-          { title: 'Gnarulated', description: '', children: [] },
+          { title: 'Granulated', description: '', children: [] },
           { title: 'Powder', description: '', children: [] },
           { title: 'Reticulated substrate', description: 'Basket-like network', children: [] },
           { title: 'Fibrouse', description: 'Wood', children: [] },
