@@ -1,4 +1,6 @@
 class ComplexitiesController < ApplicationController
+  before_filter :login_required
+
   def index
     @complexities = Complexity.all
   end
