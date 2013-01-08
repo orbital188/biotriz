@@ -1,6 +1,10 @@
 <% title "Environment" %>
 
 <p>
+  <strong>Parent:</strong>
+  <%= @environment.parent.title if @environment.parent %>
+</p>
+<p>
   <strong>Title:</strong>
   <%= @environment.title %>
 </p>
