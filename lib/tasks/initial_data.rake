@@ -90,5 +90,19 @@ namespace :db do
     ]
 
     populate_hierarchical Environment, environments
+
+    complexities = [
+      { title: 'Molecule', description: '' },
+      { title: 'Cell', description: '' },
+      { title: 'Tissue', description: '' },
+      { title: 'Organ', description: '' },
+      { title: 'System of organs', description: '' },
+      { title: 'Organism', description: '' },
+      { title: 'Group', description: '' },
+      { title: 'Population', description: '' },
+      { title: 'Ecosystem', description: '' }
+    ]
+
+    populate Complexity, complexities
   end
 end
