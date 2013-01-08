@@ -13,4 +13,8 @@ module ApplicationHelper
     end
     select object, method, choices, options, html_options
   end
+
+  def display_error_messages_for(form)
+    render "shared/error_messages", object: form.object
+  end
 end

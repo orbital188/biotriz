@@ -1,7 +1,7 @@
 <div class="row">
   <div class="span6 offset3">
     <%= form_for @environment do |f| %>
-      <%= f.error_messages %>
+      <%= display_error_messages_for f %>
       <p>
         <%= f.label :parent_id %><br />
         <%= hierarchical_select :environment, :parent_id, Environment,
