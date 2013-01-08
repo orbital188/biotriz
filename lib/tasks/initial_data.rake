@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 def populate(table, data)
   data.each do |row|
     table.create! row
@@ -104,5 +105,11 @@ namespace :db do
     ]
 
     populate Complexity, complexities
+
+    parameters = [
+      { title: 'Substance', description: "-	 What is it, what is it made of, contain, what does it produce or have?  Physical properties of matter (mass, volume, weight/pressure, density, plasticity, elasticity, colour, transparency, temperature; solid, liquid, gas, plasma, field; void etc.), chemical parameters (class of substance, etc.)\nUse, add/remove; compose/decompose/dissolve homogenize/distinguish; make inert/conductive; make resilient/flexible ; melt, freeze, evaporate, crystallize, sublimate, solidify, condense, congeal/clot, embed/absorb, substitute.\n\n-	Who? - All the standard police questions (e.g., name, surname, sex, age, address, employment, etc) and also: cultural and religious background, educational level, previous history, family status, list of relatives and close friends/regular contacts, medical/health state, psychological \"portrait\" (habits, preferences, hobbies, etc.)", children: [] }
+    ]
+
+    populate_hierarchical Parameter, parameters
   end
 end
