@@ -1,19 +1,28 @@
 <% title "Complexities" %>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-  </tr>
-  <% for complexity in @complexities %>
-    <tr>
-      <td><%= complexity.title %></td>
-      <td><%= complexity.description %></td>
-      <td><%= link_to "Show", complexity %></td>
-      <td><%= link_to "Edit", edit_complexity_path(complexity) %></td>
-      <td><%= link_to "Destroy", complexity, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="row">
+  <div class="span8 offset2">
+    <p><%= link_to "New Complexity", new_complexity_path %></p>
 
-<p><%= link_to "New Complexity", new_complexity_path %></p>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for complexity in @complexities %>
+          <tr>
+            <td><%= complexity.title %></td>
+            <td><%= simple_format complexity.description %></td>
+            <td><%= link_to "Show", complexity %></td>
+            <td><%= link_to "Edit", edit_complexity_path(complexity) %></td>
+            <td><%= link_to "Destroy", complexity, :confirm => 'Are you sure?', :method => :delete %></td>
+          </tr>
+        <% end %>
+    </table>
+
+    <p><%= link_to "New Complexity", new_complexity_path %></p>
+  </div>
+</div>
