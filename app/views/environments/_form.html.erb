@@ -3,16 +3,16 @@
     <%= form_for @environment do |f| %>
       <%= display_error_messages_for f %>
       <p>
-        <%= f.label :parent_id %><br />
+        <%= f.label :parent_id %>
         <%= hierarchical_select :environment, :parent_id, Environment,
             { include_blank: true }, { size: "10" } %>
       </p>
       <p>
-        <%= f.label :title %><br />
+        <%= f.label :title %>
         <%= f.text_field :title %>
       </p>
       <p>
-        <%= f.label :description %><br />
+        <%= f.label :description %>
         <%= f.text_area :description %>
       </p>
       <p><%= f.submit class: "btn btn-large btn-primary"%></p>
