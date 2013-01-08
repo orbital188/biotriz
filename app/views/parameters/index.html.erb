@@ -1,19 +1,31 @@
 <% title "Parameters" %>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-  </tr>
-  <% for parameter in @parameters %>
-    <tr>
-      <td><%= parameter.title %></td>
-      <td><%= parameter.description %></td>
-      <td><%= link_to "Show", parameter %></td>
-      <td><%= link_to "Edit", edit_parameter_path(parameter) %></td>
-      <td><%= link_to "Destroy", parameter, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="row">
+  <div class="span8 offset2">
+    <p><%= link_to "New Parameter", new_parameter_path %></p>
 
-<p><%= link_to "New Parameter", new_parameter_path %></p>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Parent</th>
+          <th>Title</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for parameter in @parameters %>
+          <tr>
+            <td><%= parameter.parent.title if parameter.parent %></td>
+            <td><%= parameter.title %></td>
+            <td><%= simple_format parameter.description %></td>
+            <td><%= link_to "Show", parameter %></td>
+            <td><%= link_to "Edit", edit_parameter_path(parameter) %></td>
+            <td><%= link_to "Destroy", parameter, :confirm => 'Are you sure?', :method => :delete %></td>
+          </tr>
+       <% end %>
+      </tbody>
+    </table>
+
+    <p><%= link_to "New Parameter", new_parameter_path %></p>
+  </div>
+</div>

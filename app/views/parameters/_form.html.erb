@@ -1,12 +1,21 @@
-<%= form_for @parameter do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p><%= f.submit %></p>
-<% end %>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for @parameter do |f| %>
+      <%= display_error_messages_for f %>
+      <p>
+        <%= f.label :parent_id %><br />
+        <%= hierarchical_select :parameter, :parent_id, Parameter,
+            { include_blank: true }, { size: "10" } %>
+      </p>
+      <p>
+        <%= f.label :title %><br />
+        <%= f.text_field :title %>
+      </p>
+      <p>
+        <%= f.label :description %><br />
+        <%= f.text_area :description %>
+      </p>
+      <p><%= f.submit class: "btn btn-large btn-primary" %></p>
+    <% end %>
+  </div>
+</div>

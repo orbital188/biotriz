@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: parameters
+#
+#  id          :integer          not null, primary key
+#  title       :string(250)      not null
+#  description :text
+#  ancestry    :string(255)
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 one:
   title: MyString
   description: MyText

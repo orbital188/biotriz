@@ -1,16 +1,20 @@
 <% title "Size" %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @size.title %>
-</p>
-<p>
-  <strong>Description:</strong>
-  <%= simple_format @size.description %>
-</p>
+<div class="row">
+  <div class="span6 offset3">
+    <p>
+      <strong>Title:</strong>
+      <%= @size.title %>
+    </p>
+    <p>
+      <strong>Description:</strong>
+      <%= simple_format @size.description %>
+    </p>
 
-<p>
-  <%= link_to "Edit", edit_size_path(@size) %> |
-  <%= link_to "Destroy", @size, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", sizes_path %>
-</p>
+    <p>
+      <%= link_to "Edit", edit_size_path(@size) %> |
+      <%= link_to "Destroy", @size, :confirm => 'Are you sure?', :method => :delete %> |
+      <%= link_to "View All", sizes_path %>
+    </p>
+  </div>
+</div>

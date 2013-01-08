@@ -1,16 +1,24 @@
 <% title "Parameter" %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @parameter.title %>
-</p>
-<p>
-  <strong>Description:</strong>
-  <%= @parameter.description %>
-</p>
+<div class="row">
+  <div class="span6 offset3">
+    <p>
+      <strong>Parent:</strong>
+      <%= @parameter.parent.title if @parameter.parent %>
+    </p>
+    <p>
+      <strong>Title:</strong>
+      <%= @parameter.title %>
+    </p>
+    <p>
+      <strong>Description:</strong>
+      <%= simple_format @parameter.description %>
+    </p>
 
-<p>
-  <%= link_to "Edit", edit_parameter_path(@parameter) %> |
-  <%= link_to "Destroy", @parameter, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", parameters_path %>
-</p>
+    <p>
+      <%= link_to "Edit", edit_parameter_path(@parameter) %> |
+      <%= link_to "Destroy", @parameter, :confirm => 'Are you sure?', :method => :delete %> |
+      <%= link_to "View All", parameters_path %>
+    </p>
+  </div>
+</div>
