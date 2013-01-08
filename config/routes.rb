@@ -1,4 +1,6 @@
 Biotriz::Application.routes.draw do
+  resources :parameters
+
   resources :complexities
 
   match 'user/edit' => 'users#edit', :as => :edit_current_user

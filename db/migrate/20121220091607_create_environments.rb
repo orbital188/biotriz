@@ -11,8 +11,8 @@ class CreateEnvironments < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :environments
-
     remove_index :environments, :ancestry
+
+    drop_table :environments
   end
 end
