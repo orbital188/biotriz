@@ -1,0 +1,16 @@
+<% title "Complexity" %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @complexity.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @complexity.description %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_complexity_path(@complexity) %> |
+  <%= link_to "Destroy", @complexity, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", complexities_path %>
+</p>

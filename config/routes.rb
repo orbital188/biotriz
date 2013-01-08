@@ -1,4 +1,6 @@
 Biotriz::Application.routes.draw do
+  resources :complexities
+
   match 'user/edit' => 'users#edit', :as => :edit_current_user
   root :to => 'homes#index'
 

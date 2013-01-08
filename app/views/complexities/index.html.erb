@@ -1,0 +1,19 @@
+<% title "Complexities" %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+  <% for complexity in @complexities %>
+    <tr>
+      <td><%= complexity.title %></td>
+      <td><%= complexity.description %></td>
+      <td><%= link_to "Show", complexity %></td>
+      <td><%= link_to "Edit", edit_complexity_path(complexity) %></td>
+      <td><%= link_to "Destroy", complexity, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Complexity", new_complexity_path %></p>

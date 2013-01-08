@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: complexities
+#
+#  id          :integer          not null, primary key
+#  title       :string(250)      not null
+#  description :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+one:
+  title: MyString
+  description: MyText
+
+two:
+  title: MyString
+  description: MyText
