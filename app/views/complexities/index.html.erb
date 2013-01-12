@@ -17,7 +17,7 @@
         <% for complexity in @complexities %>
           <tr>
             <td><%= complexity.title %></td>
-            <td><%= simple_format complexity.description %></td>
+            <td><%= truncate_html(simple_format complexity.description) %></td>
             <td><%= link_to "View", complexity %></td>
             <td><%= link_to "Edit", edit_complexity_path(complexity) %></td>
             <td><%= link_to "Delete", complexity, :confirm => 'Are you sure?', :method => :delete %></td>

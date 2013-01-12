@@ -19,7 +19,7 @@
           <tr>
             <td><%= parameter.parent.title if parameter.parent %></td>
             <td><%= parameter.title %></td>
-            <td><%= simple_format parameter.description %></td>
+            <td><%= truncate_html(simple_format parameter.description) %></td>
             <td><%= link_to "View", parameter %></td>
             <td><%= link_to "Edit", edit_parameter_path(parameter) %></td>
             <td><%= link_to "Delete", parameter, :confirm => 'Are you sure?', :method => :delete %></td>
