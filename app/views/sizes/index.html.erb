@@ -4,6 +4,8 @@
   <div class="span8 offset2">
     <p><%= link_to "New Size", new_size_path %></p>
 
+    <%= pagination_for @sizes %>
+
     <table class="table table-striped table-hover">
       <thead>
         <tr>
@@ -23,6 +25,9 @@
         <% end %>
       </tbody>
     </table>
+
+    <%= page_entries_info @sizes %>
+    <%= pagination_for @sizes %>
 
     <p><%= link_to "New Size", new_size_path %></p>
   </div>

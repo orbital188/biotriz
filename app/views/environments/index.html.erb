@@ -4,6 +4,8 @@
   <div class="span8 offset2">
     <p><%= link_to "New Environment", new_environment_path %></p>
 
+    <%= pagination_for @environments %>
+
     <table class="table table-striped table-hover">
       <thead>
         <tr>
@@ -25,6 +27,9 @@
         <% end %>
       </tbody>
     </table>
+
+    <%= page_entries_info @environments %>
+    <%= pagination_for @environments %>
 
     <p><%= link_to "New Environment", new_environment_path %></p>
   </div>
