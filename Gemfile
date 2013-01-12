@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails'
 gem "ancestry"
 gem "bootstrap-sass"
+gem "will_paginate"
+gem "bootstrap-will_paginate"
 
 group :development, :test do
   gem 'sqlite3'
