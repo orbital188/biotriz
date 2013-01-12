@@ -20,9 +20,9 @@
             <td><%= parameter.parent.title if parameter.parent %></td>
             <td><%= parameter.title %></td>
             <td><%= simple_format parameter.description %></td>
-            <td><%= link_to "Show", parameter %></td>
+            <td><%= link_to "View", parameter %></td>
             <td><%= link_to "Edit", edit_parameter_path(parameter) %></td>
-            <td><%= link_to "Destroy", parameter, :confirm => 'Are you sure?', :method => :delete %></td>
+            <td><%= link_to "Delete", parameter, :confirm => 'Are you sure?', :method => :delete %></td>
           </tr>
        <% end %>
       </tbody>

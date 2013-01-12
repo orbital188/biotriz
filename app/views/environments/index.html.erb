@@ -20,9 +20,9 @@
             <td><%= environment.parent.title if environment.parent %></td>
             <td><%= environment.title %></td>
             <td><%= simple_format environment.description %></td>
-            <td><%= link_to "Show", environment %></td>
+            <td><%= link_to "View", environment %></td>
             <td><%= link_to "Edit", edit_environment_path(environment) %></td>
-            <td><%= link_to "Destroy", environment, :confirm => 'Are you sure?', :method => :delete %></td>
+            <td><%= link_to "Delete", environment, :confirm => 'Are you sure?', :method => :delete %></td>
           </tr>
         <% end %>
       </tbody>
