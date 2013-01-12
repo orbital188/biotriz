@@ -4,6 +4,8 @@
   <div class="span8 offset2">
     <p><%= link_to "New Size", new_size_path %></p>
 
+    <%= pagination_for @sizes %>
+
     <table class="table table-striped table-hover">
       <thead>
         <tr>
@@ -15,14 +17,17 @@
         <% for size in @sizes %>
           <tr>
             <td><%= size.title %></td>
-            <td><%= simple_format size.description %></td>
-            <td><%= link_to "Show", size %></td>
+            <td><%= truncate_html(simple_format size.description) %></td>
+            <td><%= link_to "View", size %></td>
             <td><%= link_to "Edit", edit_size_path(size) %></td>
-            <td><%= link_to "Destroy", size, :confirm => 'Are you sure?', :method => :delete %></td>
+            <td><%= link_to "Delete", size, :confirm => 'Are you sure?', :method => :delete %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
+
+    <%= page_entries_info @sizes %>
+    <%= pagination_for @sizes %>
 
     <p><%= link_to "New Size", new_size_path %></p>
   </div>

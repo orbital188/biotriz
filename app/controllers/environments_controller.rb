@@ -2,7 +2,7 @@ class EnvironmentsController < ApplicationController
   before_filter :login_required
 
   def index
-    @environments = Environment.all
+    @environments = Environment.paginate page: params[:page]
   end
 
   def show

@@ -2,7 +2,7 @@ class ParametersController < ApplicationController
   before_filter :login_required
 
   def index
-    @parameters = Parameter.all
+    @parameters = Parameter.paginate page: params[:page]
   end
 
   def show

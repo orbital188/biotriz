@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 gem 'rails'
 gem "ancestry"
 gem "bootstrap-sass"
+gem "will_paginate"
+gem "bootstrap-will_paginate"
+gem "truncate_html"
 
 group :development, :test do
   gem 'sqlite3'

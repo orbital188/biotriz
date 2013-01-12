@@ -16,4 +16,6 @@ class Environment < ActiveRecord::Base
   attr_accessible :title, :description, :parent_id, :parent
 
   validates :title, length: { maximum: 250 }, presence: true
+
+  self.per_page = 20
 end

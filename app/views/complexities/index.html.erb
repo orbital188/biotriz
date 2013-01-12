@@ -4,6 +4,8 @@
   <div class="span8 offset2">
     <p><%= link_to "New Complexity", new_complexity_path %></p>
 
+    <%= pagination_for @complexities %>
+
     <table class="table table-striped table-hover">
       <thead>
         <tr>
@@ -15,13 +17,16 @@
         <% for complexity in @complexities %>
           <tr>
             <td><%= complexity.title %></td>
-            <td><%= simple_format complexity.description %></td>
-            <td><%= link_to "Show", complexity %></td>
+            <td><%= truncate_html(simple_format complexity.description) %></td>
+            <td><%= link_to "View", complexity %></td>
             <td><%= link_to "Edit", edit_complexity_path(complexity) %></td>
-            <td><%= link_to "Destroy", complexity, :confirm => 'Are you sure?', :method => :delete %></td>
+            <td><%= link_to "Delete", complexity, :confirm => 'Are you sure?', :method => :delete %></td>
           </tr>
         <% end %>
     </table>
+
+    <%= page_entries_info @complexities %>
+    <%= pagination_for @complexities %>
 
     <p><%= link_to "New Complexity", new_complexity_path %></p>
   </div>

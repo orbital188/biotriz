@@ -4,6 +4,8 @@
   <div class="span8 offset2">
     <p><%= link_to "New Environment", new_environment_path %></p>
 
+    <%= pagination_for @environments %>
+
     <table class="table table-striped table-hover">
       <thead>
         <tr>
@@ -17,14 +19,17 @@
           <tr>
             <td><%= environment.parent.title if environment.parent %></td>
             <td><%= environment.title %></td>
-            <td><%= simple_format environment.description %></td>
-            <td><%= link_to "Show", environment %></td>
+            <td><%= truncate_html(simple_format environment.description) %></td>
+            <td><%= link_to "View", environment %></td>
             <td><%= link_to "Edit", edit_environment_path(environment) %></td>
-            <td><%= link_to "Destroy", environment, :confirm => 'Are you sure?', :method => :delete %></td>
+            <td><%= link_to "Delete", environment, :confirm => 'Are you sure?', :method => :delete %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
+
+    <%= page_entries_info @environments %>
+    <%= pagination_for @environments %>
 
     <p><%= link_to "New Environment", new_environment_path %></p>
   </div>

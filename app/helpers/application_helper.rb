@@ -17,4 +17,9 @@ module ApplicationHelper
   def display_error_messages_for(form)
     render "shared/error_messages", object: form.object
   end
+
+  def pagination_for(collection)
+    will_paginate collection, class: 'pagination pagination-small pagination-centered',
+    previous_label: '<<', next_label: '>>'
+  end
 end

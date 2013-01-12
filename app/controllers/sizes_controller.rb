@@ -2,7 +2,7 @@ class SizesController < ApplicationController
   before_filter :login_required
 
   def index
-    @sizes = Size.all
+    @sizes = Size.paginate page: params[:page]
   end
 
   def show

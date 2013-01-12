@@ -2,7 +2,7 @@ class ComplexitiesController < ApplicationController
   before_filter :login_required
 
   def index
-    @complexities = Complexity.all
+    @complexities = Complexity.paginate page: params[:page]
   end
 
   def show
