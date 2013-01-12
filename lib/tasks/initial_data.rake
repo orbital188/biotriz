@@ -1,17 +1,50 @@
 # -*- coding: utf-8 -*-
+
+$stdout.sync = true
+
 def populate(table, data)
+  print "Populate table #{table}... "
+
+  new, ignored = 0, 0
+
   data.each do |row|
-    table.create! row
+    if table.exists? row
+      ignored += 1
+    else
+      table.create! row
+      new += 1
+    end
   end
+
+  puts "Done (#{new} new record(s), #{ignored} ignored, #{table.count} total)"
 end
 
 def populate_hierarchical(table, data, parent_id=nil)
-  data.each do |row|
-    children = row.delete :children
-    row[:parent_id] = parent_id
-    record = table.create! row
-    populate_hierarchical table, children, record.id
+  print "Populate table #{table}... "
+
+  new, ignored = 0, 0
+  inc_new, inc_ignored = lambda { new += 1 }, lambda { ignored += 1 }
+
+  def inner(table, data, parent_id, inc_new, inc_ignored)
+    data.each do |row|
+      children = row.delete :children
+
+      dataset = if parent_id then table.find(parent_id).children else table end
+
+      if dataset.exists? row
+        inc_ignored.call
+      else
+        row[:parent_id] = parent_id
+        record = table.create! row
+        inc_new.call
+        inner table, children, record.id, inc_new, inc_ignored
+      end
+    end
   end
+
+  inner table, data, nil, inc_new, inc_ignored
+
+  puts "Done (#{new} new record(s), #{ignored} ignored, #{table.count} total)"
 end
 
 namespace :db do
