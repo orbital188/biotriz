@@ -1,0 +1,21 @@
+<% title "Entity Functions" %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Ancestry</th>
+  </tr>
+  <% for entity_function in @entity_functions %>
+    <tr>
+      <td><%= entity_function.title %></td>
+      <td><%= entity_function.description %></td>
+      <td><%= entity_function.ancestry %></td>
+      <td><%= link_to "Show", entity_function %></td>
+      <td><%= link_to "Edit", edit_entity_function_path(entity_function) %></td>
+      <td><%= link_to "Destroy", entity_function, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Entity Function", new_entity_function_path %></p>
