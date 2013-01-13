@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130108073749) do
+ActiveRecord::Schema.define(:version => 20130113023822) do
 
   create_table "complexities", :force => true do |t|
     t.string   "title",       :limit => 250, :null => false
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(:version => 20130108073749) do
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
   end
+
+  add_index "complexities", ["title"], :name => "index_complexities_on_title", :unique => true
 
   create_table "environments", :force => true do |t|
     t.string   "title",       :limit => 250, :null => false
@@ -28,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20130108073749) do
     t.datetime "updated_at",                 :null => false
   end
 
+  add_index "environments", ["ancestry", "title"], :name => "index_environments_on_ancestry_and_title", :unique => true
   add_index "environments", ["ancestry"], :name => "index_environments_on_ancestry"
 
   create_table "parameters", :force => true do |t|
@@ -38,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20130108073749) do
     t.datetime "updated_at",                 :null => false
   end
 
+  add_index "parameters", ["ancestry", "title"], :name => "index_parameters_on_ancestry_and_title", :unique => true
   add_index "parameters", ["ancestry"], :name => "index_parameters_on_ancestry"
 
   create_table "sizes", :force => true do |t|
@@ -47,6 +51,8 @@ ActiveRecord::Schema.define(:version => 20130108073749) do
     t.datetime "updated_at",                 :null => false
   end
 
+  add_index "sizes", ["title"], :name => "index_sizes_on_title", :unique => true
+
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "email"
@@ -55,5 +61,8 @@ ActiveRecord::Schema.define(:version => 20130108073749) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["username"], :name => "index_users_on_username", :unique => true
 
 end
