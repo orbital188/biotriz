@@ -15,7 +15,7 @@ class Parameter < ActiveRecord::Base
 
   attr_accessible :title, :description, :parent, :parent_id
 
-  validates :title, length: { maximum: 250 }, presence: true
+  validates :title, length: { maximum: 250 }, presence: true, uniqueness: { scope: :ancestry }
 
   self.per_page = 20
 end
