@@ -1,5 +1,7 @@
 <% title "Entity Functions" %>
 
+<%= pagination_for @entity_functions %>
+
 <table>
   <tr>
     <th>Title</th>
@@ -17,5 +19,8 @@
     </tr>
   <% end %>
 </table>
+
+<%= page_entries_info @entity_functions %>
+<%= pagination_for @entity_functions %>
 
 <p><%= link_to "New Entity Function", new_entity_function_path %></p>
