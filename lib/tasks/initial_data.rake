@@ -517,7 +517,7 @@ namespace :db do
                 {title: 'Adjust', description: "", children: []},
                 {title: 'Insulate', description: "", children: []},
                 {title: 'Grade', description: "", children: []}]},
-            {title: 'Regulate light257', description: "", children: [
+            {title: 'Regulate light', description: "", children: [
                 {title: 'Insolate', description: "", children: []},
                 {title: 'Ignite', description: "", children: []},
                 {title: 'Blase', description: "", children: []},
