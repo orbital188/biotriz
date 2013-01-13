@@ -1,0 +1,20 @@
+<% title "Principle" %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @principle.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @principle.description %>
+</p>
+<p>
+  <strong>Principle Number:</strong>
+  <%= @principle.principle_number %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_principle_path(@principle) %> |
+  <%= link_to "Destroy", @principle, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", principles_path %>
+</p>

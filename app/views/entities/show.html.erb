@@ -1,0 +1,16 @@
+<% title "Entity" %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @entity.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @entity.description %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_entity_path(@entity) %> |
+  <%= link_to "Destroy", @entity, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", entities_path %>
+</p>
