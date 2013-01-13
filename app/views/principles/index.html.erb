@@ -25,10 +25,12 @@
             <td><%= link_to "Delete", principle, :confirm => 'Are you sure?', :method => :delete %></td>
           </tr>
         <% end %>
+      </tbody>
     </table>
 
-    <% page_entries_info @principles %>
-    <% pagination_for @principles %>
+    <%= page_entries_info @principles %>
+    <%= pagination_for @principles %>
+
     <p><%= link_to "New Principle", new_principle_path %></p>
   </div>
 </div>
