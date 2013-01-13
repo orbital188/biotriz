@@ -498,6 +498,7 @@ namespace :db do
                 {title: 'Reflux', description: "", children: []},
                 {title: 'Reflex', description: "", children: []},
                 {title: 'Compensate', description: "", children: []},
+                {title: 'Trigger', description: "", children: []},
                 {title: 'Reinstate', description: "", children: []}]},
             {title: 'Manage', description: "", children: [
                 {title: 'Control', description: "", children: []},
@@ -523,7 +524,7 @@ namespace :db do
                 {title: 'Glow', description: "", children: []},
                 {title: 'Illuminate', description: "", children: []} ]}
         ]},
-        {title: 'Destroy302', description: "", children: [
+        {title: 'Destroy', description: "", children: [
             {title: 'Capture', description: "", children: [
                 {title: 'Graze', description: "", children: []},
                 {title: 'Ingest', description: "", children: []},
@@ -533,7 +534,7 @@ namespace :db do
                 {title: 'Snap', description: "", children: []},
                 {title: 'Eat', description: "", children: []},
                 {title: 'Dissolve', description: "", children: []}]},
-            {title: 'Destruct304', description: "", children: [
+            {title: 'Destruct', description: "", children: [
                 {title: 'Self-destruct', description: "", children: []},
                 {title: 'Invade', description: "", children: []},
                 {title: 'Decrease', description: "", children: []},
