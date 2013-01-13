@@ -1,4 +1,6 @@
 Biotriz::Application.routes.draw do
+  resources :environment_parameters
+
   resources :entity_functions
 
   resources :entities
