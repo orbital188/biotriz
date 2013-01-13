@@ -1,4 +1,6 @@
 Biotriz::Application.routes.draw do
+  resources :principles
+
   resources :parameters
 
   resources :complexities

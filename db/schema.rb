@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130113023822) do
+ActiveRecord::Schema.define(:version => 20130113045417) do
 
   create_table "complexities", :force => true do |t|
     t.string   "title",       :limit => 250, :null => false
@@ -43,6 +43,17 @@ ActiveRecord::Schema.define(:version => 20130113023822) do
 
   add_index "parameters", ["ancestry", "title"], :name => "index_parameters_on_ancestry_and_title", :unique => true
   add_index "parameters", ["ancestry"], :name => "index_parameters_on_ancestry"
+
+  create_table "principles", :force => true do |t|
+    t.string   "title",            :limit => 250, :null => false
+    t.text     "description"
+    t.string   "ancestry"
+    t.integer  "principle_number"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  add_index "principles", ["title"], :name => "index_principles_on_title", :unique => true
 
   create_table "sizes", :force => true do |t|
     t.string   "title",       :limit => 250, :null => false

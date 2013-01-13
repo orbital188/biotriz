@@ -1,0 +1,34 @@
+<% title "Principles" %>
+
+<div class="row">
+  <div class="span8 offset2">
+    <p><%= link_to "New Principle", new_principle_path %></p>
+
+    <%= pagination_for @principles %>
+
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Principle Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for principle in @principles %>
+          <tr>
+            <td><%= principle.title %></td>
+            <td><%= truncate_html(simple_format principle.description) %></td>
+            <td><%= principle.principle_number %></td>
+            <td><%= link_to "View", principle %></td>
+            <td><%= link_to "Edit", edit_principle_path(principle) %></td>
+            <td><%= link_to "Delete", principle, :confirm => 'Are you sure?', :method => :delete %></td>
+          </tr>
+        <% end %>
+    </table>
+
+    <% page_entries_info @principles %>
+    <% pagination_for @principles %>
+    <p><%= link_to "New Principle", new_principle_path %></p>
+  </div>
+</div>
