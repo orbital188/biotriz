@@ -13,5 +13,8 @@ class Complexity < ActiveRecord::Base
   attr_accessible :title, :description
 
   validates :title, length: { maximum: 250 }, presence: true, uniqueness: true
+
+  belongs_to :entity
+
   self.per_page = 20
 end
