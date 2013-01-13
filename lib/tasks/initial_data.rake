@@ -575,7 +575,7 @@ namespace :db do
             {title: 'Suffocate', description: "", children: []}]}
         ]} ]
 
-
+    populate_hierarchical Entity_function, entity_functions
 
 
   end
