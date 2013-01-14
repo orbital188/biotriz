@@ -14,7 +14,7 @@ class Complexity < ActiveRecord::Base
 
   validates :title, length: { maximum: 250 }, presence: true, uniqueness: true
 
-  belongs_to :entity
+  has_many :entities
 
   self.per_page = 20
 end

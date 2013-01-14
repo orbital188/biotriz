@@ -20,7 +20,7 @@ class Entity < ActiveRecord::Base
   validates :size, presence: true
   validates :complexity, presence: true
 
-  has_one :size
-  has_one :complexity
+  belongs_to :size
+  belongs_to :complexity
   self.per_page = 20
 end

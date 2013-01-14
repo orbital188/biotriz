@@ -14,7 +14,7 @@ class Size < ActiveRecord::Base
 
   validates :title, presence: true, length: { maximum: 250 }, uniqueness: true
 
-  belongs_to :entity
+  has_many :entities
 
   self.per_page = 20
 end
