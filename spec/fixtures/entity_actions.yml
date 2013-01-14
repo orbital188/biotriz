@@ -1,0 +1,9 @@
+one:
+  title: MyString
+  description: MyText
+  ancestry: MyString
+
+two:
+  title: MyString
+  description: MyText
+  ancestry: MyString

@@ -577,5 +577,11 @@ namespace :db do
 
     populate_hierarchical EntityFunction, entity_functions
 
+    actions = [
+      { title: 'Modify substance/matter', description: 'Use, add/remove substance; compose/decompose/dissolve; homogenize/distinguish; make inert/conductive; make resilient/flexible ; melt, freeze, evaporate, crystallize, sublimate, solidify, condense, congeal/clot, embed/absorb, substitute. ',
+        children: [] }
+    ]
+
+    populate_hierarchical EntityAction, actions # обрати внимание на имя модели
   end
 end

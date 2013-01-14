@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="span6 offset3">
+
+    <%= form_for @entity_action do |f| %>
+      <%= display_error_messages_for f %>
+
+      <p>
+        <%= f.label :parent_id %>
+        <%= hierarchical_select :entity_action, :parent_id, EntityAction,
+            { include_blank: true }, { size: "10" } %>
+      </p>
+      <p>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </p>
+      <p>
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+      </p>
+      <p><%= f.submit "New Action", class: "btn btn-large btn-primary" %></p>
+    <% end %>
+  </div>
+</div>
