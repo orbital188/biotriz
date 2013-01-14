@@ -6,11 +6,11 @@
 </p>
 <p>
   <strong>Description:</strong>
-  <%= @environment_parameter.description %>
+  <%= simple_format @environment_parameter.description %>
 </p>
 
 <p>
   <%= link_to "Edit", edit_environment_parameter_path(@environment_parameter) %> |
-  <%= link_to "Destroy", @environment_parameter, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Delete", @environment_parameter, :confirm => 'Are you sure?', :method => :delete %> |
   <%= link_to "View All", environment_parameters_path %>
 </p>

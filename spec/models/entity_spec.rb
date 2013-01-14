@@ -2,12 +2,14 @@
 #
 # Table name: entities
 #
-#  id          :integer          not null, primary key
-#  title       :string(255)      not null
-#  description :text
-#  ancestry    :string(255)
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id            :integer          not null, primary key
+#  title         :string(255)      not null
+#  description   :text
+#  ancestry      :string(255)
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  size_id       :integer
+#  complexity_id :integer
 #
 
 require File.dirname(__FILE__) + '/../spec_helper'
