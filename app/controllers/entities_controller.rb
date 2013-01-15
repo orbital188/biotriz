@@ -1,6 +1,8 @@
 class EntitiesController < ApplicationController
+  before_filter :login_required
+
   def index
-    @entities = Entity.all
+    @entities = Entity.paginate page: params[:page]
   end
 
   def show
