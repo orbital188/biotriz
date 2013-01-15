@@ -26,15 +26,23 @@ def populate(table, data)
   puts "Done (#{new} new record(s), #{ignored} ignored, #{table.count} total)"
 end
 
-def populate_hierarchical(table, data, parent_id=nil)
+def populate_hierarchical(table, data, options = {})
   print "Populate table #{table}... "
 
   new, ignored = 0, 0
   inc_new, inc_ignored = lambda { new += 1 }, lambda { ignored += 1 }
 
-  def inner(table, data, parent_id, inc_new, inc_ignored)
+  def inner(table, data, parent_id, inc_new, inc_ignored, options)
     data.each do |row|
       children = row.delete :children
+
+      referencing_data = {}
+
+      if options.has_key? :references
+        options[:references].each do |ref_name|
+          referencing_data[ref_name] = row.delete ref_name
+        end
+      end
 
       dataset = if parent_id then table.find(parent_id).children else table end
 
@@ -42,14 +50,28 @@ def populate_hierarchical(table, data, parent_id=nil)
         inc_ignored.call
       else
         row[:parent_id] = parent_id
-        record = table.create! row
+
+        if options[:required]
+          options[:required].each do |attr|
+            row[attr] = referencing_data.delete attr
+          end
+        end
+
+        record = table.new row
+
+        referencing_data.each do |ref_name, ref_data|
+          record[ref_name] = ref_data
+        end
+
+        record.save!
+
         inc_new.call
-        inner table, children, record.id, inc_new, inc_ignored
+        inner table, children, record.id, inc_new, inc_ignored, options
       end
     end
   end
 
-  inner table, data, nil, inc_new, inc_ignored
+  inner table, data, nil, inc_new, inc_ignored, options
 
   puts "Done (#{new} new record(s), #{ignored} ignored, #{table.count} total)"
 end
@@ -57,7 +79,7 @@ end
 sizes = [
   { title: 'Nano-scale', description: 'Molecular interactions' },
   { title: 'Micro-scale', description: 'Cells' },
-  { title: 'Millemetre', description: '' },
+  { title: 'Millimetre', description: '' },
   { title: 'Centimetre', description: '' },
   { title: 'Metre', description: '' },
   { title: 'Kilometre', description: '' }
@@ -586,3 +608,30 @@ actions = [
 ]
 
 populate_hierarchical EntityAction, actions # обрати внимание на имя модели
+
+entities = [
+  { title: 'Hoverfly "walks" on vortices that are created by its wings',
+    description: 'Problem that was solved by the flying strategy of the hoverfly is a contradiction between the need of generating lift force and very small area of the overfly wing to support the mass of the body. Due to the ration between the wing area and mass of the body gliding strategy (used for example by butterflies) may not be   a right solution.',
+    size: Size.find_by_title!('Millimetre'),
+    complexity: Complexity.find_by_title!('Organism'),
+    environments: [
+      Environment.find_by_title!('Gas'),
+      Environment.find_by_title!('Dynamic')
+    ],
+    entity_functions: [], improved_parameters: [],
+    counteracting_parameters: [], principles: [],
+    actions: [
+# Закомментировал, т.к. пока actions не заполнена
+#      EntityAction.find_by_title!('make action continuous '),
+#      EntityAction.find_by_title!('Create a gradient of energy'),
+#      EntityAction.find_by_title!('Dynamic energy, fields ')
+    ],
+    children: []
+  }
+]
+
+populate_hierarchical Entity, entities, references: [
+  :size, :complexity, :environments, :entity_functions,
+  :improved_parameters, :counteracting_parameters,
+  :principles, :actions
+], required: [:size, :complexity]
