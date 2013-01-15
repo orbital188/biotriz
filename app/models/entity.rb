@@ -17,7 +17,7 @@ class Entity < ActiveRecord::Base
 
   attr_accessible :title, :description, :parent, :parent_id,
                   :size, :size_id, :complexity, :complexity_id,
-                  :environments, :entity_functions
+                  :environments, :entity_functions, :improved_parameters
 
   validates :title, length: { maximum: 250 }, presence: true, uniqueness: { scope: :ancestry }
   validates :size, presence: true
@@ -27,7 +27,8 @@ class Entity < ActiveRecord::Base
   belongs_to :complexity
 
   has_and_belongs_to_many :environments
-  has_and_belongs_to_many :entity_functions, join_table: "entities_ent_functions"
+  has_and_belongs_to_many :entity_functions, join_table: :entities_ent_functions
+  has_and_belongs_to_many :improved_parameters, class_name: "Parameter", join_table: :entities_imp_params
 
   self.per_page = 20
 end
