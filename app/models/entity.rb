@@ -18,7 +18,7 @@ class Entity < ActiveRecord::Base
   attr_accessible :title, :description, :parent, :parent_id,
                   :size, :size_id, :complexity, :complexity_id,
                   :environments, :entity_functions, :improved_parameters,
-                  :counteracting_parameters, :principles
+                  :counteracting_parameters, :principles, :actions
 
   validates :title, length: { maximum: 250 }, presence: true, uniqueness: { scope: :ancestry }
 #  validates :size, presence: true
@@ -32,6 +32,7 @@ class Entity < ActiveRecord::Base
   has_and_belongs_to_many :improved_parameters, class_name: "Parameter", join_table: :entities_imp_params
   has_and_belongs_to_many :counteracting_parameters, class_name: "Parameter", join_table: :entities_con_params
   has_and_belongs_to_many :principles
+  has_and_belongs_to_many :actions, class_name: "EntityAction", join_table: :entities_actions, association_foreign_key: :action_id
 
   self.per_page = 20
 end
