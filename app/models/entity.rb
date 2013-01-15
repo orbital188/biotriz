@@ -20,8 +20,8 @@ class Entity < ActiveRecord::Base
                   :environments, :entity_functions, :improved_parameters
 
   validates :title, length: { maximum: 250 }, presence: true, uniqueness: { scope: :ancestry }
-  validates :size, presence: true
-  validates :complexity, presence: true
+#  validates :size, presence: true
+#  validates :complexity, presence: true
 
   belongs_to :size
   belongs_to :complexity
