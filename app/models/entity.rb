@@ -21,8 +21,8 @@ class Entity < ActiveRecord::Base
                   :counteracting_parameters, :principles, :actions
 
   validates :title, length: { maximum: 250 }, presence: true, uniqueness: { scope: :ancestry }
-#  validates :size, presence: true
-#  validates :complexity, presence: true
+  validates :size, presence: true
+  validates :complexity, presence: true
 
   belongs_to :size
   belongs_to :complexity
