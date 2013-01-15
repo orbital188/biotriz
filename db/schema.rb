@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130115035924) do
+ActiveRecord::Schema.define(:version => 20130115041124) do
 
   create_table "complexities", :force => true do |t|
     t.string   "title",       :limit => 250, :null => false
@@ -66,6 +66,14 @@ ActiveRecord::Schema.define(:version => 20130115035924) do
 
   add_index "entities_imp_params", ["entity_id", "parameter_id"], :name => "index_entities_imp_params_on_entity_id_and_parameter_id"
   add_index "entities_imp_params", ["parameter_id", "entity_id"], :name => "index_entities_imp_params_on_parameter_id_and_entity_id"
+
+  create_table "entities_principles", :id => false, :force => true do |t|
+    t.integer "entity_id"
+    t.integer "principle_id"
+  end
+
+  add_index "entities_principles", ["entity_id", "principle_id"], :name => "index_entities_principles_on_entity_id_and_principle_id"
+  add_index "entities_principles", ["principle_id", "entity_id"], :name => "index_entities_principles_on_principle_id_and_entity_id"
 
   create_table "entity_actions", :force => true do |t|
     t.string   "title",       :limit => 250, :null => false
