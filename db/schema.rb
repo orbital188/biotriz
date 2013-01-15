@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130114092210) do
+ActiveRecord::Schema.define(:version => 20130115024911) do
 
   create_table "complexities", :force => true do |t|
     t.string   "title",       :limit => 250, :null => false
@@ -34,6 +34,22 @@ ActiveRecord::Schema.define(:version => 20130114092210) do
 
   add_index "entities", ["ancestry", "title"], :name => "index_entities_on_ancestry_and_title"
   add_index "entities", ["ancestry"], :name => "index_entities_on_ancestry"
+
+  create_table "entities_ent_functions", :id => false, :force => true do |t|
+    t.integer "entity_id"
+    t.integer "entity_function_id"
+  end
+
+  add_index "entities_ent_functions", ["entity_function_id", "entity_id"], :name => "index_entities_ent_functions_on_entity_function_id_and_entity_id"
+  add_index "entities_ent_functions", ["entity_id", "entity_function_id"], :name => "index_entities_ent_functions_on_entity_id_and_entity_function_id"
+
+  create_table "entities_environments", :id => false, :force => true do |t|
+    t.integer "entity_id"
+    t.integer "environment_id"
+  end
+
+  add_index "entities_environments", ["entity_id", "environment_id"], :name => "index_entities_environments_on_entity_id_and_environment_id"
+  add_index "entities_environments", ["environment_id", "entity_id"], :name => "index_entities_environments_on_environment_id_and_entity_id"
 
   create_table "entity_actions", :force => true do |t|
     t.string   "title",       :limit => 250, :null => false

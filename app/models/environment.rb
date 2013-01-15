@@ -13,9 +13,11 @@
 class Environment < ActiveRecord::Base
   has_ancestry
 
-  attr_accessible :title, :description, :parent_id, :parent
+  attr_accessible :title, :description, :parent_id, :parent, :entities
 
   validates :title, length: { maximum: 250 }, presence: true, uniqueness: { scope: :ancestry }
+
+  has_and_belongs_to_many :entities
 
   self.per_page = 20
 end

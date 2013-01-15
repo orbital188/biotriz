@@ -16,7 +16,8 @@ class Entity < ActiveRecord::Base
   has_ancestry
 
   attr_accessible :title, :description, :parent, :parent_id,
-                  :size, :size_id, :complexity, :complexity_id
+                  :size, :size_id, :complexity, :complexity_id,
+                  :environments, :entity_functions
 
   validates :title, length: { maximum: 250 }, presence: true, uniqueness: { scope: :ancestry }
   validates :size, presence: true
@@ -24,5 +25,9 @@ class Entity < ActiveRecord::Base
 
   belongs_to :size
   belongs_to :complexity
+
+  has_and_belongs_to_many :environments
+  has_and_belongs_to_many :entity_functions, join_table: "entities_ent_functions"
+
   self.per_page = 20
 end
