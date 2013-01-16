@@ -15,9 +15,14 @@ class EntityFunction < ActiveRecord::Base
 
   attr_accessible :title, :description, :parent, :parent_id, :entities
 
-  validates :title, presence: true, length: { maximum: 250 }, uniqueness: { scope: :ancestry }
+  validates :title,
+            presence: true,
+            length: { maximum: 250 },
+            uniqueness: { scope: :ancestry }
 
-  has_and_belongs_to_many :entities, join_table: "entities_ent_functions"
+  has_and_belongs_to_many :entities,
+                          join_table: "entities_ent_functions",
+                          uniq: true
 
   self.per_page = 20
 end

@@ -20,19 +20,35 @@ class Entity < ActiveRecord::Base
                   :environments, :entity_functions, :improved_parameters,
                   :counteracting_parameters, :principles, :actions
 
-  validates :title, length: { maximum: 250 }, presence: true, uniqueness: { scope: :ancestry }
+  validates :title, length: { maximum: 250 },
+            presence: true, uniqueness: { scope: :ancestry }
+
   validates :size, presence: true
   validates :complexity, presence: true
 
   belongs_to :size
   belongs_to :complexity
 
-  has_and_belongs_to_many :environments
-  has_and_belongs_to_many :entity_functions, join_table: :entities_ent_functions
-  has_and_belongs_to_many :improved_parameters, class_name: "Parameter", join_table: :entities_imp_params
-  has_and_belongs_to_many :counteracting_parameters, class_name: "Parameter", join_table: :entities_con_params
-  has_and_belongs_to_many :principles
-  has_and_belongs_to_many :actions, class_name: "EntityAction", join_table: :entities_actions, association_foreign_key: :action_id
+  has_and_belongs_to_many :environments,
+                          uniq: true
+  has_and_belongs_to_many :entity_functions,
+                          join_table: :entities_ent_functions,
+                          uniq: true
+  has_and_belongs_to_many :improved_parameters,
+                          class_name: "Parameter",
+                          join_table: :entities_imp_params,
+                          uniq: true
+  has_and_belongs_to_many :counteracting_parameters,
+                          class_name: "Parameter",
+                          join_table: :entities_con_params,
+                          uniq: true
+  has_and_belongs_to_many :principles,
+                          uniq: true
+  has_and_belongs_to_many :actions,
+                          class_name: "EntityAction",
+                          join_table: :entities_actions,
+                          association_foreign_key: :action_id,
+                          uniq: true
 
   self.per_page = 20
 end

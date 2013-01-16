@@ -15,9 +15,15 @@ class EntityAction < ActiveRecord::Base
 
   attr_accessible :title, :description, :parent, :parent_id, :entities
 
-  validates :title, presence: true, length: { maximum: 250 }, uniqueness: { scope: :ancestry }
+  validates :title,
+            presence: true,
+            length: { maximum: 250 },
+            uniqueness: { scope: :ancestry }
 
-  has_and_belongs_to_many :entities, foreign_key: :action_id, join_table: :entities_actions
+  has_and_belongs_to_many :entities,
+                          foreign_key: :action_id,
+                          join_table: :entities_actions,
+                          uniq: true
 
   self.per_page = 20
 end
