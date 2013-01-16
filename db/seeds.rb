@@ -30,13 +30,12 @@ def populate_hierarchical(table, data, options = {})
   print "Populate table #{table}... "
 
   new, ignored = 0, 0
-  inc_new, inc_ignored = lambda { new += 1 }, lambda { ignored += 1 }
 
-  def inner(table, data, parent_id, inc_new, inc_ignored, options)
+  inner = lambda do |data, parent_id|
     data.each do |row|
       children = row.delete :children
 
-      referencing_data = {}
+      referencing_data = Hash.new
 
       if options.has_key? :references
         options[:references].each do |ref_name|
@@ -47,7 +46,7 @@ def populate_hierarchical(table, data, options = {})
       dataset = if parent_id then table.find(parent_id).children else table end
 
       if dataset.exists? row
-        inc_ignored.call
+        ignored += 1
       else
         row[:parent_id] = parent_id
 
@@ -60,13 +59,13 @@ def populate_hierarchical(table, data, options = {})
         record = table.new row
         record.update_attributes! referencing_data
 
-        inc_new.call
-        inner table, children, record.id, inc_new, inc_ignored, options
+        new += 1
+        inner.call children, record.id
       end
     end
   end
 
-  inner table, data, nil, inc_new, inc_ignored, options
+  inner.call data, nil
 
   puts "Done (#{new} new record(s), #{ignored} ignored, #{table.count} total)"
 end
