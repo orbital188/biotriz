@@ -10,20 +10,22 @@
 $stdout.sync = true
 
 def populate(table, data)
-  print "Populate table #{table}... "
 
   new, ignored = 0, 0
+  timing = Benchmark.measure do
+    print "Populate table #{table}... "
 
-  data.each do |row|
-    if table.exists? row
-      ignored += 1
-    else
-      table.create! row
-      new += 1
+    data.each do |row|
+      if table.exists? row
+        ignored += 1
+      else
+        table.create! row
+        new += 1
+      end
     end
   end
 
-  puts "Done (#{new} new record(s), #{ignored} ignored, #{table.count} total)"
+  puts "Done (#{new} new record(s), #{ignored} ignored, #{table.count} total) in #{'%.4fs' % timing.real}"
 end
 
 def populate_hierarchical(table, data, options = {})
@@ -31,43 +33,46 @@ def populate_hierarchical(table, data, options = {})
 
   new, ignored = 0, 0
 
-  inner = lambda do |data, parent_id|
-    data.each do |row|
-      children = row.delete :children
+  timing = Benchmark.measure do
 
-      referencing_data = Hash.new
+    inner = lambda do |data, parent_id|
+      data.each do |row|
+        children = row.delete :children
 
-      if options.has_key? :references
-        options[:references].each do |ref_name|
-          referencing_data[ref_name] = row.delete ref_name
-        end
-      end
+        referencing_data = Hash.new
 
-      dataset = if parent_id then table.find(parent_id).children else table end
-
-      if dataset.exists? row
-        ignored += 1
-      else
-        row[:parent_id] = parent_id
-
-        if options[:required]
-          options[:required].each do |attr|
-            row[attr] = referencing_data.delete attr
+        if options.has_key? :references
+          options[:references].each do |ref_name|
+            referencing_data[ref_name] = row.delete ref_name
           end
         end
 
-        record = table.new row
-        record.update_attributes! referencing_data
+        dataset = if parent_id then table.find(parent_id).children else table end
 
-        new += 1
-        inner.call children, record.id
+        if dataset.exists? row
+          ignored += 1
+        else
+          row[:parent_id] = parent_id
+
+          if options[:required]
+            options[:required].each do |attr|
+              row[attr] = referencing_data.delete attr
+            end
+          end
+
+          record = table.new row
+          record.update_attributes! referencing_data
+
+          new += 1
+          inner.call children, record.id
+        end
       end
     end
+
+    inner.call data, nil
   end
 
-  inner.call data, nil
-
-  puts "Done (#{new} new record(s), #{ignored} ignored, #{table.count} total)"
+  puts "Done (#{new} new record(s), #{ignored} ignored, #{table.count} total) in #{'%.4fs' % timing.real}"
 end
 
 sizes = [
