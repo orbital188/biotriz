@@ -58,12 +58,7 @@ def populate_hierarchical(table, data, options = {})
         end
 
         record = table.new row
-
-        referencing_data.each do |ref_name, ref_data|
-          record[ref_name] = ref_data
-        end
-
-        record.save!
+        record.update_attributes! referencing_data
 
         inc_new.call
         inner table, children, record.id, inc_new, inc_ignored, options
@@ -618,8 +613,22 @@ entities = [
       Environment.find_by_title!('Gas'),
       Environment.find_by_title!('Dynamic')
     ],
-    entity_functions: [], improved_parameters: [],
-    counteracting_parameters: [], principles: [],
+    entity_functions: [
+      EntityFunction.find_by_title!('Fly')
+    ],
+    improved_parameters: [
+      Parameter.find_by_title!('Force')
+    ],
+    counteracting_parameters: [
+      Parameter.find_by_title!('Weight'),
+      Parameter.find_by_title!('Mass'),
+      Parameter.find_by_title!('Area')
+    ],
+    principles: [
+      Principle.find_by_title!('Spheroidality and Curvature'),
+      Principle.find_by_title!('Dynamics'),
+      Principle.find_by_title!('Mechanical vibration')
+    ],
     actions: [
 # Закомментировал, т.к. пока actions не заполнена
 #      EntityAction.find_by_title!('make action continuous '),
