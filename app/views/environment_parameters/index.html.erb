@@ -1,0 +1,19 @@
+<% title "Environment Parameters" %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+  <% for environment_parameter in @environment_parameters %>
+    <tr>
+      <td><%= environment_parameter.title %></td>
+      <td><%= environment_parameter.description %></td>
+      <td><%= link_to "Show", environment_parameter %></td>
+      <td><%= link_to "Edit", edit_environment_parameter_path(environment_parameter) %></td>
+      <td><%= link_to "Destroy", environment_parameter, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Environment Parameter", new_environment_parameter_path %></p>
