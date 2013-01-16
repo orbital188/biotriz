@@ -1,4 +1,6 @@
 class EnvironmentParametersController < ApplicationController
+  before_filter :login_required
+
   def index
     @environment_parameters = EnvironmentParameter.paginate page: params[:page]
   end

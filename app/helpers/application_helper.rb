@@ -1,15 +1,15 @@
 module ApplicationHelper
   def hierarchical_select(object, method, model, options={}, html_options={})
     choices = [].tap do |ch|
-      def rec(lst, records, indent_level=0)
+      rec = lambda do |records, indent_level=0|
         records.each do |record|
           indentation = '----' * indent_level
           indentation << ' ' unless indent_level == 0
-          lst << [indentation + record.title, record.id]
-          rec lst, record.children, indent_level + 1
+          ch << [indentation + record.title, record.id]
+          rec.call record.children, indent_level + 1
         end
       end
-      rec ch, model.roots
+      rec.call model.roots
     end
     select object, method, choices, options, html_options
   end
@@ -21,5 +21,20 @@ module ApplicationHelper
   def pagination_for(collection)
     will_paginate collection, class: 'pagination pagination-small pagination-centered',
     previous_label: '<<', next_label: '>>'
+  end
+
+  def admin_links(entity)
+    "".tap do |html|
+      html << "<td>#{link_to 'View', polymorphic_path(entity)}</td>"
+      html << "<td>#{link_to 'Edit', edit_polymorphic_path(entity)}</td>"
+      html << "<td>#{link_to 'Delete' , polymorphic_path(entity), confirm: 'Are you sure?', method: :delete}</td>"
+    end.html_safe
+  end
+
+  def list_with_links(collection, options = {})
+    attr = options[:attr] || :title
+    sep = options[:sep] || ", "
+
+    collection.collect { |item| link_to item[attr], item }.join(sep).html_safe
   end
 end

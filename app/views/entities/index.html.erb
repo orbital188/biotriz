@@ -1,19 +1,41 @@
 <% title "Entities" %>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-  </tr>
-  <% for entity in @entities %>
-    <tr>
-      <td><%= entity.title %></td>
-      <td><%= entity.description %></td>
-      <td><%= link_to "Show", entity %></td>
-      <td><%= link_to "Edit", edit_entity_path(entity) %></td>
-      <td><%= link_to "Destroy", entity, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="row">
+  <div class="span12">
 
-<p><%= link_to "New Entity", new_entity_path %></p>
+    <p><%= link_to "New Entity", new_entity_path %></p>
+
+    <%= pagination_for @entities %>
+
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Parent</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Environments</th>
+          <th>Improved Parameters</th>
+          <th>Counteracting Parameters</th>
+        </tr>
+      </thead>
+      <% for entity in @entities %>
+        <tbody>
+          <tr>
+            <td><%= entity.parent.title if entity.parent %></td>
+            <td><%= entity.title %></td>
+            <td><%= truncate_html(simple_format entity.description) %></td>
+            <td><%= list_with_links entity.environments %></td>
+            <td><%= list_with_links entity.improved_parameters %></td>
+            <td><%= list_with_links entity.counteracting_parameters %></td>
+            <%= admin_links(entity) %>
+          </tr>
+        </tbody>
+      <% end %>
+    </table>
+
+    <%= page_entries_info @entities %>
+    <%= pagination_for @entities %>
+
+    <p><%= link_to "New Entity", new_entity_path %></p>
+  </div>
+</div>

@@ -1,19 +1,36 @@
 <% title "Environment Parameters" %>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-  </tr>
-  <% for environment_parameter in @environment_parameters %>
-    <tr>
-      <td><%= environment_parameter.title %></td>
-      <td><%= environment_parameter.description %></td>
-      <td><%= link_to "Show", environment_parameter %></td>
-      <td><%= link_to "Edit", edit_environment_parameter_path(environment_parameter) %></td>
-      <td><%= link_to "Destroy", environment_parameter, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="row">
+  <div class="span8 offset2">
+    <table class="table table-striped table-hover">
 
-<p><%= link_to "New Environment Parameter", new_environment_parameter_path %></p>
+      <p><%= link_to "New Environment Parameter", new_environment_parameter_path %></p>
+
+      <%= pagination_for @environment_parameters %>
+
+
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for environment_parameter in @environment_parameters %>
+          <tr>
+            <td><%= environment_parameter.title %></td>
+            <td><%= truncate_html(simple_format environment_parameter.description) %></td>
+            <td><%= link_to "View", environment_parameter %></td>
+            <td><%= link_to "Edit", edit_environment_parameter_path(environment_parameter) %></td>
+            <td><%= link_to "Delete", environment_parameter, :confirm => 'Are you sure?', :method => :delete %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= page_entries_info @environment_parameters %>
+    <%= pagination_for @environment_parameters %>
+
+    <p><%= link_to "New Environment Parameter", new_environment_parameter_path %></p>
+  </div>
+</div>

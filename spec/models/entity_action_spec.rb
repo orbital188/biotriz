@@ -1,20 +1,19 @@
 # == Schema Information
 #
-# Table name: sizes
+# Table name: entity_actions
 #
 #  id          :integer          not null, primary key
 #  title       :string(250)      not null
 #  description :text
+#  ancestry    :string(255)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 
-class Size < ActiveRecord::Base
-  attr_accessible :title, :description
+require File.dirname(__FILE__) + '/../spec_helper'
 
-  validates :title, presence: true, length: { maximum: 250 }, uniqueness: true
-
-  has_many :entities
-
-  self.per_page = 20
+describe EntityAction do
+  it "should be valid" do
+    EntityAction.new.should be_valid
+  end
 end

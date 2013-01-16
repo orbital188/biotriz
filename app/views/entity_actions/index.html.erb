@@ -1,0 +1,36 @@
+<% title "Actions" %>
+
+<div class="row">
+  <div class="span8 offset2">
+    <p><%= link_to "New Action", new_entity_action_path %></p>
+
+    <%= pagination_for @entity_actions %>
+
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Parent</th>
+          <th>Title</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for entity_action in @entity_actions %>
+          <tr>
+            <td><%= entity_action.parent.title if entity_action.parent %></td>
+            <td><%= entity_action.title %></td>
+            <td><%= truncate_html(simple_format entity_action.description) %></td>
+            <td><%= link_to "View", entity_action %></td>
+            <td><%= link_to "Edit", edit_entity_action_path(entity_action) %></td>
+            <td><%= link_to "Delete", entity_action, :confirm => 'Are you sure?', :method => :delete %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= page_entries_info @entity_actions %>
+    <%= pagination_for @entity_actions %>
+
+    <p><%= link_to "New Action", new_entity_action_path %></p>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: environments
+# Table name: entity_actions
 #
 #  id          :integer          not null, primary key
 #  title       :string(250)      not null
@@ -10,17 +10,19 @@
 #  updated_at  :datetime         not null
 #
 
-class Environment < ActiveRecord::Base
+class EntityAction < ActiveRecord::Base
   has_ancestry
 
-  attr_accessible :title, :description, :parent_id, :parent, :entities
+  attr_accessible :title, :description, :parent, :parent_id, :entities
 
   validates :title,
-            length: { maximum: 250 },
             presence: true,
+            length: { maximum: 250 },
             uniqueness: { scope: :ancestry }
 
   has_and_belongs_to_many :entities,
+                          foreign_key: :action_id,
+                          join_table: :entities_actions,
                           uniq: true
 
   self.per_page = 20

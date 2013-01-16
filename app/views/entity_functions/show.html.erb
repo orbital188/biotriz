@@ -1,20 +1,24 @@
 <% title "Entity Function" %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @entity_function.title %>
-</p>
-<p>
-  <strong>Description:</strong>
-  <%= @entity_function.description %>
-</p>
-<p>
-  <strong>Ancestry:</strong>
-  <%= @entity_function.ancestry %>
-</p>
+<div class="row">
+  <div class="span6 offset3">
+    <p>
+      <strong>Parent:</strong>
+      <%= @entity_function.parent.title if @entity_function.parent %>
+    </p>
+    <p>
+      <strong>Title:</strong>
+      <%= @entity_function.title %>
+    </p>
+    <p>
+      <strong>Description:</strong>
+      <%= simple_format @entity_function.description %>
+    </p>
 
-<p>
-  <%= link_to "Edit", edit_entity_function_path(@entity_function) %> |
-  <%= link_to "Destroy", @entity_function, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", entity_functions_path %>
-</p>
+    <p>
+      <%= link_to "Edit", edit_entity_function_path(@entity_function) %> |
+      <%= link_to "Delete", @entity_function, :confirm => 'Are you sure?', :method => :delete %> |
+      <%= link_to "View All", entity_functions_path %>
+    </p>
+  </div>
+</div>

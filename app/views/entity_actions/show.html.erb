@@ -1,0 +1,24 @@
+<% title "Action" %>
+
+<div class="row">
+  <div class="span6 offset3">
+    <p>
+      <strong>Parent:</strong>
+      <%= @entity_action.parent.title if @entity_action.parent %>
+    </p>
+    <p>
+      <strong>Title:</strong>
+      <%= @entity_action.title %>
+    </p>
+    <p>
+      <strong>Description:</strong>
+      <%= simple_format @entity_action.description %>
+    </p>
+
+    <p>
+      <%= link_to "Edit", edit_entity_action_path(@entity_action) %> |
+      <%= link_to "Delete", @entity_action, :confirm => 'Are you sure?', :method => :delete %> |
+      <%= link_to "View All", entity_actions_path %>
+    </p>
+  </div>
+</div>

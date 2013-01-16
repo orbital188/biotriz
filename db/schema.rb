@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130113071818) do
+ActiveRecord::Schema.define(:version => 20130115042833) do
 
   create_table "complexities", :force => true do |t|
     t.string   "title",       :limit => 250, :null => false
@@ -34,6 +34,65 @@ ActiveRecord::Schema.define(:version => 20130113071818) do
 
   add_index "entities", ["ancestry", "title"], :name => "index_entities_on_ancestry_and_title"
   add_index "entities", ["ancestry"], :name => "index_entities_on_ancestry"
+
+  create_table "entities_actions", :id => false, :force => true do |t|
+    t.integer "entity_id"
+    t.integer "action_id"
+  end
+
+  add_index "entities_actions", ["action_id", "entity_id"], :name => "index_entities_actions_on_action_id_and_entity_id"
+  add_index "entities_actions", ["entity_id", "action_id"], :name => "index_entities_actions_on_entity_id_and_action_id"
+
+  create_table "entities_con_params", :id => false, :force => true do |t|
+    t.integer "entity_id"
+    t.integer "parameter_id"
+  end
+
+  add_index "entities_con_params", ["entity_id", "parameter_id"], :name => "index_entities_con_params_on_entity_id_and_parameter_id"
+  add_index "entities_con_params", ["parameter_id", "entity_id"], :name => "index_entities_con_params_on_parameter_id_and_entity_id"
+
+  create_table "entities_ent_functions", :id => false, :force => true do |t|
+    t.integer "entity_id"
+    t.integer "entity_function_id"
+  end
+
+  add_index "entities_ent_functions", ["entity_function_id", "entity_id"], :name => "index_entities_ent_functions_on_entity_function_id_and_entity_id"
+  add_index "entities_ent_functions", ["entity_id", "entity_function_id"], :name => "index_entities_ent_functions_on_entity_id_and_entity_function_id"
+
+  create_table "entities_environments", :id => false, :force => true do |t|
+    t.integer "entity_id"
+    t.integer "environment_id"
+  end
+
+  add_index "entities_environments", ["entity_id", "environment_id"], :name => "index_entities_environments_on_entity_id_and_environment_id"
+  add_index "entities_environments", ["environment_id", "entity_id"], :name => "index_entities_environments_on_environment_id_and_entity_id"
+
+  create_table "entities_imp_params", :id => false, :force => true do |t|
+    t.integer "entity_id"
+    t.integer "parameter_id"
+  end
+
+  add_index "entities_imp_params", ["entity_id", "parameter_id"], :name => "index_entities_imp_params_on_entity_id_and_parameter_id"
+  add_index "entities_imp_params", ["parameter_id", "entity_id"], :name => "index_entities_imp_params_on_parameter_id_and_entity_id"
+
+  create_table "entities_principles", :id => false, :force => true do |t|
+    t.integer "entity_id"
+    t.integer "principle_id"
+  end
+
+  add_index "entities_principles", ["entity_id", "principle_id"], :name => "index_entities_principles_on_entity_id_and_principle_id"
+  add_index "entities_principles", ["principle_id", "entity_id"], :name => "index_entities_principles_on_principle_id_and_entity_id"
+
+  create_table "entity_actions", :force => true do |t|
+    t.string   "title",       :limit => 250, :null => false
+    t.text     "description"
+    t.string   "ancestry"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  add_index "entity_actions", ["ancestry", "title"], :name => "index_entity_actions_on_ancestry_and_title", :unique => true
+  add_index "entity_actions", ["ancestry"], :name => "index_entity_actions_on_ancestry"
 
   create_table "entity_functions", :force => true do |t|
     t.string   "title",       :limit => 250, :null => false

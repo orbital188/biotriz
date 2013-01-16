@@ -1,21 +1,36 @@
 <% title "Entity Functions" %>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Ancestry</th>
-  </tr>
-  <% for entity_function in @entity_functions %>
-    <tr>
-      <td><%= entity_function.title %></td>
-      <td><%= entity_function.description %></td>
-      <td><%= entity_function.ancestry %></td>
-      <td><%= link_to "Show", entity_function %></td>
-      <td><%= link_to "Edit", edit_entity_function_path(entity_function) %></td>
-      <td><%= link_to "Destroy", entity_function, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="row">
+  <div class="span8 offset2">
+    <p><%= link_to "New Entity Function", new_entity_function_path %></p>
 
-<p><%= link_to "New Entity Function", new_entity_function_path %></p>
+    <%= pagination_for @entity_functions %>
+
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Parent</th>
+          <th>Title</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for entity_function in @entity_functions %>
+          <tr>
+            <td><%= entity_function.parent.title if entity_function.parent %></td>
+            <td><%= entity_function.title %></td>
+            <td><%= truncate_html(simple_format entity_function.description) %></td>
+            <td><%= link_to "View", entity_function %></td>
+            <td><%= link_to "Edit", edit_entity_function_path(entity_function) %></td>
+            <td><%= link_to "Delete", entity_function, :confirm => 'Are you sure?', :method => :delete %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= page_entries_info @entity_functions %>
+    <%= pagination_for @entity_functions %>
+
+    <p><%= link_to "New Entity Function", new_entity_function_path %></p>
+  </div>
+</div>

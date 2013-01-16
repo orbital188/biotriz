@@ -1,4 +1,6 @@
 class PrinciplesController < ApplicationController
+  before_filter :login_required
+
   def index
     @principles = Principle.paginate page: params[:page]
   end

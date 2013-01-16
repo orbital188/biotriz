@@ -1,4 +1,6 @@
 class EntityFunctionsController < ApplicationController
+  before_filter :login_required
+
   def index
     @entity_functions = EntityFunction.paginate page: params[:page]
   end
