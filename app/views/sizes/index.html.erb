@@ -18,9 +18,7 @@
           <tr>
             <td><%= size.title %></td>
             <td><%= truncate_html(simple_format size.description) %></td>
-            <td><%= link_to "View", size %></td>
-            <td><%= link_to "Edit", edit_size_path(size) %></td>
-            <td><%= link_to "Delete", size, :confirm => 'Are you sure?', :method => :delete %></td>
+            <%= admin_links size %>
           </tr>
         <% end %>
       </tbody>

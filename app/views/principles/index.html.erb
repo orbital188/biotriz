@@ -20,9 +20,7 @@
             <td><%= principle.title %></td>
             <td><%= truncate_html(simple_format principle.description) %></td>
             <td><%= principle.principle_number %></td>
-            <td><%= link_to "View", principle %></td>
-            <td><%= link_to "Edit", edit_principle_path(principle) %></td>
-            <td><%= link_to "Delete", principle, :confirm => 'Are you sure?', :method => :delete %></td>
+            <%= admin_links principle %>
           </tr>
         <% end %>
       </tbody>
