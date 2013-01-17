@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(:version => 20130115042833) do
     t.integer "entity_function_id"
   end
 
-  add_index "entities_ent_functions", ["entity_function_id", "entity_id"], :name => "index_entities_ent_functions_on_entity_function_id_and_entity_id"
-  add_index "entities_ent_functions", ["entity_id", "entity_function_id"], :name => "index_entities_ent_functions_on_entity_id_and_entity_function_id"
+  add_index "entities_ent_functions", ["entity_function_id", "entity_id"], :name => "i_entities_ent_functions_on_entity_id_and_entity_function_id"
+  add_index "entities_ent_functions", ["entity_id", "entity_function_id"], :name => "i_entities_ent_functions_on_entity_function_id_and_entity_id"
 
   create_table "entities_environments", :id => false, :force => true do |t|
     t.integer "entity_id"

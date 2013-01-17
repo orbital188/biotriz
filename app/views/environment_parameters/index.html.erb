@@ -8,7 +8,6 @@
 
       <%= pagination_for @environment_parameters %>
 
-
       <thead>
         <tr>
           <th>Title</th>
@@ -20,9 +19,7 @@
           <tr>
             <td><%= environment_parameter.title %></td>
             <td><%= truncate_html(simple_format environment_parameter.description) %></td>
-            <td><%= link_to "View", environment_parameter %></td>
-            <td><%= link_to "Edit", edit_environment_parameter_path(environment_parameter) %></td>
-            <td><%= link_to "Delete", environment_parameter, :confirm => 'Are you sure?', :method => :delete %></td>
+            <%= admin_links environment_parameter %>
           </tr>
         <% end %>
       </tbody>

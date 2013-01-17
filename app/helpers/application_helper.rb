@@ -24,11 +24,11 @@ module ApplicationHelper
   end
 
   def admin_links(entity)
-    "".tap do |html|
-      html << "<td>#{link_to 'View', polymorphic_path(entity)}</td>"
-      html << "<td>#{link_to 'Edit', edit_polymorphic_path(entity)}</td>"
-      html << "<td>#{link_to 'Delete' , polymorphic_path(entity), confirm: 'Are you sure?', method: :delete}</td>"
-    end.html_safe
+    """
+       <td>#{link_to 'View', polymorphic_path(entity)}</td>
+       <td>#{link_to 'Edit', edit_polymorphic_path(entity)}</td>
+       <td>#{link_to 'Delete', polymorphic_path(entity), confirm: 'Are you sure?', method: :delete}</td>
+    """.html_safe
   end
 
   def list_with_links(collection, options = {})

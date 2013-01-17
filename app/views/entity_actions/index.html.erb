@@ -20,9 +20,7 @@
             <td><%= entity_action.parent.title if entity_action.parent %></td>
             <td><%= entity_action.title %></td>
             <td><%= truncate_html(simple_format entity_action.description) %></td>
-            <td><%= link_to "View", entity_action %></td>
-            <td><%= link_to "Edit", edit_entity_action_path(entity_action) %></td>
-            <td><%= link_to "Delete", entity_action, :confirm => 'Are you sure?', :method => :delete %></td>
+            <%= admin_links entity_action %>
           </tr>
         <% end %>
       </tbody>
