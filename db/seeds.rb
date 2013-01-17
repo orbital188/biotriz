@@ -602,8 +602,96 @@ entity_functions =[
 populate_hierarchical EntityFunction, entity_functions
 
 actions = [
-  { title: 'Modify substance/matter', description: 'Use, add/remove substance; compose/decompose/dissolve; homogenize/distinguish; make inert/conductive; make resilient/flexible ; melt, freeze, evaporate, crystallize, sublimate, solidify, condense, congeal/clot, embed/absorb, substitute. ',
-    children: [] }
+  { title: 'Modify substance/matter', description: "Use, add/remove substance; compose/decompose/dissolve; homogenize/distinguish; make inert/conductive; make resilient/flexible ; melt, freeze, evaporate, crystallize, sublimate, solidify, condense, congeal/clot, embed/absorb, substitute.",
+    children: [
+        {title: 'Increase the amount of substance', description: "", children: []},
+        {title: 'Decrease the amount of substance', description: "", children: []},
+        {title: 'Assemble substances', description: "", children: []},
+        {title: 'Destroy substance', description: "", children: []},
+        {title: 'Homogenise substance', description: "", children: []},
+        {title: 'Fragment substance', description: "", children: []},
+        {title: 'Introduce symmetry to substance', description: "Make it anisotropic", children: []},
+        {title: 'Introduce asymmetry to substance', description: "Make it anisotropic", children: []},
+        {title: 'Make static substance', description: "", children: []},
+        {title: 'Move substance', description: "", children: []},
+        {title: 'Preserve substance', description: "", children: []},
+        {title: 'Adapt substance', description: "", children: []}
+    ] },
+  { title: 'Change structure', description: "Make it irregular  or	regular (hierarchical, fractal, homogenous or with gradient of features),	standard , compatible, inter-changeable, modular (of the same scale - e.g. LEGO and different scales - e.g. LEGO + DUPLO) - Physical structure (monolithic or fragmented, with internal cavities and their structures, surface texture, combination of various items, objects, materials), regularity of the structure - random, regular; natural, artificial; etc",
+    children: [
+        {title: 'Add structure', description: "", children: []},
+        {title: 'Simplify structure', description: "", children: []},
+        {title: 'Assemble structures', description: "", children: []},
+        {title: 'Dissemble structures', description: "", children: []},
+        {title: 'Uniform structure', description: "", children: []},
+        {title: 'Specialise structure', description: "", children: []},
+        {title: 'Balance structure', description: "Introduce symmetry", children: []},
+        {title: 'Misbalance structure', description: "Introduce asymmetry", children: []},
+        {title: 'Make static structure', description: "Stau put, support", children: []},
+        {title: 'Make dynamic structure', description: "Re-structure", children: []},
+        {title: 'Maintain structure', description: "Preserve structure", children: []},
+        {title: 'Make resilient structure', description: "Adapt structure", children: []}
+    ] },
+  { title: 'Change space', description: "Make a space/shape regular, irregular; natural, artificial;  Change size: height, width, depth; diameter/radius. Change a position: vertical, horizontal, inclined.",
+    children: [
+        {title: 'Increase space', description: "Stratch", children: []},
+        {title: 'Decrease space', description: "Shrink", children: []},
+        {title: 'Merge space', description: "", children: []},
+        {title: 'Separate, isolate space', description: "", children: []},
+        {title: 'Uniform space', description: "", children: []},
+        {title: 'Fragment space', description: "", children: []},
+        {title: 'Introduce symmetry in space', description: "", children: []},
+        {title: 'Introduce asymmetry in space', description: "", children: []},
+        {title: 'Static space', description: "", children: []},
+        {title: 'Dynamic space', description: "", children: []},
+        {title: 'Preserve space', description: "", children: []},
+        {title: 'Conform, adapt space', description: "", children: []}
+    ] },
+  { title: 'Make changes in time', description: "Long or short term change, immediate change, postponed change, regular change: consider past, present, future, duration of a process. Modify the speed (retardation/ acceleration) of the process, or change an order or rhythm of the actions. Make it Continuous/periodic, synchronous/asynchronous/metachronous processes, fast/slow, regular/irregular, postponed/preliminary action.	Singular event (unique or not unique) or multiple event (irregular or regular: monotonouse, routine work, waiting mode, frequency of cycles). ",
+    children: [
+        {title: 'Increase time parameter', description: "Accelerate", children: []},
+        {title: 'Decrease time parameter', description: "", children: []},
+        {title: 'Synchronise process', description: "", children: []},
+        {title: 'Stop the process or function', description: "", children: []},
+        {title: 'make action continuous', description: "", children: []},
+        {title: 'Make it pulsate', description: "", children: []},
+        {title: 'Make it regular', description: "", children: []},
+        {title: 'Make it irregular', description: "", children: []},
+        {title: 'Make the process static', description: "", children: []},
+        {title: 'Increase the dynamics of the process', description: "Degree of freedom in time", children: []},
+        {title: 'Stabilise time parameter', description: "", children: []},
+        {title: 'Make time parameter adjustable', description: "", children: []}
+    ] },
+  { title: 'Modify energy or field', description: "Make it inert/conductive. Change energy source or type of acting field (gravity, sunlight, geo-magnetic, electric, acoustic, heat, illumination, pressure). Long-life/expensive/short-life/cheap. Consider energy types , e.g. potential, kinetic, chemical energy (energy of chemical bonds - various fuels, explosives). Consider the duration of energy action: short (explosion, implosion, collapse, flight of a bullet, sparkle, etc.) or long (flood, volcano eruption, fire in a forest, etc.).",
+    children: [
+        {title: 'Increase energy parameter', description: "Generate energy", children: []},
+        {title: 'Decrease energy parameter', description: "", children: []},
+        {title: 'Collect energy, add fields', description: "", children: []},
+        {title: 'Destroy energy source, field', description: "", children: []},
+        {title: 'Conduct energy, unify fields', description: "", children: []},
+        {title: 'Separate energy, fields', description: "", children: []},
+        {title: 'Introduce symmetry in energy circulation', description: "", children: []},
+        {title: 'Create a gradient of energy', description: "", children: []},
+        {title: 'Static fields and energy sources', description: "", children: []},
+        {title: 'Dynamic energy, fields', description: "Transduce", children: []},
+        {title: 'Stabilise energy parameter', description: "", children: []},
+        {title: 'Vary, make adaptable energy or field', description: "", children: []}
+    ] },
+  { title: 'Modify information', "Use or modify the regulation, information exchange, detecting, measuring, adapting issues, positive and negative feed-back and feed-forward, communication, etc.",
+    children: [
+        {title: 'Increase, add information', description: "", children: []},
+        {title: 'Decrease information parameter', description: "", children: []},
+        {title: 'Synthesise information', description: "", children: []},
+        {title: 'Destroy a parameter of information', description: "", children: []},
+        {title: 'Increase uncertainty', description: "", children: []},
+        {title: 'Analyse', description: "", children: []},
+        {title: 'Introduce symmetry in information/regulation', description: "", children: []},
+        {title: 'Introduce asymmetry in information/regulation', description: "", children: []},
+        {title: 'Stop, make static informational parameter', description: "", children: []},
+        {title: 'Increase dynamics  in information/regulation', description: "", children: []},
+        {title: 'Preserve, store information', description: "", children: []},
+        {title: 'Adapt, vary, adjust information', description: "", children: []}
+    ] }
 ]
 
 populate_hierarchical EntityAction, actions # обрати внимание на имя модели
@@ -634,10 +722,939 @@ entities = [
       Principle.find_by_title!('Mechanical vibration')
     ],
     actions: [
-# Закомментировал, т.к. пока actions не заполнена
-#      EntityAction.find_by_title!('make action continuous '),
-#      EntityAction.find_by_title!('Create a gradient of energy'),
-#      EntityAction.find_by_title!('Dynamic energy, fields ')
+      EntityAction.find_by_title!('make action continuous'),
+      EntityAction.find_by_title!('Create a gradient of energy'),
+      EntityAction.find_by_title!('Dynamic energy, fields ')
+    ],
+    children: [
+        { title: 'Hoverflies wings can twist through 45 degrees at frequency 300 Herz generating additional lift forces',
+          description: "Hoverfly's wing has the hinged flap at the base of the wing that flips up at right angles to the rest of the wing. With each wing beat the hoverfly’s wing twists and recapture the energy of the wing beat, creating vortices that generate an additional lift forces.",
+          size: Size.find_by_title!('Millimetre'),
+          complexity: Complexity.find_by_title!('Organ'),
+          environments: [
+              Environment.find_by_title!('Gas'),
+              Environment.find_by_title!('Dynamic')
+          ],
+          entity_functions: [
+              EntityFunction.find_by_title!('Vibrate')
+          ],
+          improved_parameters: [
+              Parameter.find_by_title!('Degree of freedom'),
+              Parameter.find_by_title!('Vibrations & Oscillations')
+          ],
+          counteracting_parameters: [
+              Parameter.find_by_title!('Stiffness'),
+              Parameter.find_by_title!('Area')
+          ],
+          principles: [
+              Principle.find_by_title!('Local Quality'),
+              Principle.find_by_title!('Preliminary action'),
+              Principle.find_by_title!('Dynamics'),
+              Principle.find_by_title!('Another dimension'),
+              Principle.find_by_title!('Mechanical vibration'),
+              Principle.find_by_title!('Self-Service')
+
+          ],
+          actions: [
+              EntityAction.find_by_title!('make action continuous'),
+              EntityAction.find_by_title!('Create a gradient of energy')
+          ],
+          children: []}
+    ]
+  },
+  { title: 'Coordinated beating of the flagella',
+    description: "Volvox colony actively increases the concentration of food items around it using its flagella. Coordinated beating of the flagella concentrate the food particles just ahead of the moving colony. The colony plows into this nutrient-rich region and leaves a plume of waste in its wake.",
+    size: Size.find_by_title!('Micro-scale'),
+    complexity: Complexity.find_by_title!('Cell'),
+    environments: [
+        Environment.find_by_title!('Fluid'),
+        Environment.find_by_title!('Still/stagnated')
+    ],
+    entity_functions: [
+        EntityFunction.find_by_title!('Move'),
+        EntityFunction.find_by_title!('Convey')
+    ],
+    improved_parameters: [
+        Parameter.find_by_title!('Velocity')
+    ],
+    counteracting_parameters: [
+        Parameter.find_by_title!('Viscosity')
+    ],
+    principles: [
+        Principle.find_by_title!('Segmentation'),
+        Principle.find_by_title!('Local Quality'),
+        Principle.find_by_title!('Asymmetry'),
+        Principle.find_by_title!('Periodic action')
+
+    ],
+    actions: [
+        EntityAction.find_by_title!('Move substance'),
+        EntityAction.find_by_title!('Make it pulsate')
+    ],
+    children: []
+  },
+  { title: 'Ctenophora tentacles',
+    description: "Numerous weak elastic tentacles attach to a prey, entangle and immobilise it.",
+    size: Size.find_by_title!('Centimetre'),
+    complexity: Complexity.find_by_title!('System of organs'),
+    environments: [
+        Environment.find_by_title!('Fluid'),
+        Environment.find_by_title!('Liquid')
+    ],
+    entity_functions: [
+        EntityFunction.find_by_title!('Pull'),
+        EntityFunction.find_by_title!('Attach'),
+        EntityFunction.find_by_title!('Compensate'),
+        EntityFunction.find_by_title!('Suppress'),
+        EntityFunction.find_by_title!('Restrain'),
+        EntityFunction.find_by_title!('Capture')
+    ],
+    improved_parameters: [
+        Parameter.find_by_title!('Force')
+    ],
+    counteracting_parameters: [
+        Parameter.find_by_title!('Substance')
+    ],
+    principles: [
+        Principle.find_by_title!('Dynamics'),
+        Principle.find_by_title!('Blessing in disguise - turn harm into benefit')
+    ],
+    actions: [
+        EntityAction.find_by_title!('Make resilient structure')
+    ],
+    children: []
+  },
+  { title: 'Attachment of Aspidogaster conchiola to soft substrate by fragmented sucker',
+    description: "Attachment of Aspidogaster conchiola to the soft surface of an intestine with the help of the fragmented sucker that conforms the ever-changing shape of the intestine.",
+    size: Size.find_by_title!('Centimetre'),
+    complexity: Complexity.find_by_title!('Organ'),
+    environments: [
+        Environment.find_by_title!('Moving'),
+        Environment.find_by_title!('Liquid')
+    ],
+    entity_functions: [
+        EntityFunction.find_by_title!('Attach')
+    ],
+    improved_parameters: [
+        Parameter.find_by_title!('Area')
+    ],
+    counteracting_parameters: [
+        Parameter.find_by_title!('Force')
+    ],
+    principles: [
+        Principle.find_by_title!('Segmentation'),
+        Principle.find_by_title!('Dynamics'),
+        Principle.find_by_title!('Pneumatics and hydraulics'),
+        Principle.find_by_title!('Inert atmosphere or vacuum')
+    ],
+    actions: [
+        EntityAction.find_by_title!('Fragment substance'),
+        EntityAction.find_by_title!('Adapt substance'),
+        EntityAction.find_by_title!('Make dynamic structure'),
+        EntityAction.find_by_title!('Fragment space'),
+        EntityAction.find_by_title!('Conform, adapt space')
+    ],
+    children: []
+  },
+  { title: 'Area covered with ivy leaves',
+    description: "Area covered with the leaves of ivy (Hedera helix) uses the light-receptive surface to maximum extent due to the shape of leaves, which look like a jig-saw puzzle. This light-recepting area at the same time is resistant to winds, rain and other mechanical loads thanks to its fragmentation.",
+    size: Size.find_by_title!('Centimetre'),
+    complexity: Complexity.find_by_title!('System of organs'),
+    environments: [
+        Environment.find_by_title!('Static'),
+        Environment.find_by_title!('Moving'),
+        Environment.find_by_title!('Stream'),
+        Environment.find_by_title!('Transparent'),
+        Environment.find_by_title!('Duration of existence: long lasting'),
+        Environment.find_by_title!('Gas'),
+        Environment.find_by_title!('Dynamic'),
+        Environment.find_by_title!('Permanent and static'),
+        Environment.find_by_title!('Temporal and dynamic')
+    ],
+    entity_functions: [
+        EntityFunction.find_by_title!('Cover'),
+        EntityFunction.find_by_title!('Resist'),
+        EntityFunction.find_by_title!('Keep shape'),
+        EntityFunction.find_by_title!('Bear load')
+    ],
+    improved_parameters: [
+        Parameter.find_by_title!('Area'),
+        Parameter.find_by_title!('Shape'),
+        Parameter.find_by_title!('Productivity'),
+        Parameter.find_by_title!('Strength'),
+        Parameter.find_by_title!('Reliability')
+    ],
+    counteracting_parameters: [
+        Parameter.find_by_title!('Force')
+    ],
+    principles: [
+        Principle.find_by_title!('Dynamics'),
+        Principle.find_by_title!('Segmentation'),
+        Principle.find_by_title!('Self-Service'),
+        Principle.find_by_title!('Cheap short-living objects')
+    ],
+    actions: [
+        EntityAction.find_by_title!('Fragment substance'),
+        EntityAction.find_by_title!('Assemble structures'),
+        EntityAction.find_by_title!('Maintain structure'),
+        EntityAction.find_by_title!('Make resilient structure')
+    ],
+    children: []
+  },
+  { title: 'Wind-driven spheric dry body of the plant baby-breath (Gypsophyla paniculata) spreads its seeds',
+    description: "Wind-driven spheric dry body of the plant baby-breath (Gypsophyla paniculata) spreads its seeds being broken off its roots.",
+    size: Size.find_by_title!('Centimetre'),
+    complexity: Complexity.find_by_title!('Organism'),
+    environments: [
+        Environment.find_by_title!('Solid-gas interface')
+    ],
+    entity_functions: [
+        EntityFunction.find_by_title!('Transport'),
+        EntityFunction.find_by_title!('Distribute'),
+        EntityFunction.find_by_title!('Roll')
+    ],
+    improved_parameters: [
+        Parameter.find_by_title!('Distribution')
+    ],
+    counteracting_parameters: [
+        Parameter.find_by_title!('Power')
+    ],
+    principles: [
+        Principle.find_by_title!('Spheroidality and Curvature'),
+        Principle.find_by_title!('Dynamics'),
+        Principle.find_by_title!('Blessing in disguise - turn harm into benefit'),
+        Principle.find_by_title!('Intermediary/Mediator'),
+        Principle.find_by_title!('Self-Service'),
+        Principle.find_by_title!('Cheap short-living objects')
+    ],
+    actions: [
+        EntityAction.find_by_title!('Make dynamic structure')
+    ],
+    children: []
+  },
+  { title: 'Stomata regulation of water content in leaves of higher terrestrial plants',
+    description: "Stomata are closed when it is dry atmosphere and a plant needs to reduce transpiration and when the weather is wet stomata automatically open. This mechanisms is based on structure of cells and their turgor.",
+    size: Size.find_by_title!('Micro-scale'),
+    complexity: Complexity.find_by_title!('Tissue'),
+    environments: [
+        Environment.find_by_title!('Solid-liquid-gas interface'),
+        Environment.find_by_title!('Temporal and dynamic')
+    ],
+    entity_functions: [
+        EntityFunction.find_by_title!('Accumulate'),
+        EntityFunction.find_by_title!('Evaporate'),
+        EntityFunction.find_by_title!('Dry'),
+        EntityFunction.find_by_title!('Flatten'),
+        EntityFunction.find_by_title!('Counteract')
+    ],
+    improved_parameters: [
+        Parameter.find_by_title!('Regulation')
+    ],
+    counteracting_parameters: [],
+    principles: [
+        Principle.find_by_title!('Dynamics'),
+        Principle.find_by_title!('Feedback'),
+        Principle.find_by_title!('Intermediary/Mediator'),
+        Principle.find_by_title!('Self-Service'),
+        Principle.find_by_title!('Pneumatics and hydraulics'),
+        Principle.find_by_title!('Flexible shells and thin films'),
+        Principle.find_by_title!('Phase transition')
+    ],
+    actions: [
+        EntityAction.find_by_title!('Increase the amount of substance'),
+        EntityAction.find_by_title!('Decrease the amount of substance')
+    ],
+    children: []
+  },
+  { title: 'Camouflage of trichoptera: pieces of ground are attached to the shell',
+    description: "Camouflage of trichoptera larvae is based on attaching pieces of the surrounding ground to the shell of the animal.",
+    size: Size.find_by_title!('Millimetre'),
+    complexity: Complexity.find_by_title!('Organism'),
+    environments: [
+        Environment.find_by_title!('Solid-liquid interface')
+    ],
+    entity_functions: [
+        EntityFunction.find_by_title!('Protect'),
+        EntityFunction.find_by_title!('Camouflage'),
+        EntityFunction.find_by_title!('Hide'),
+        EntityFunction.find_by_title!('Cover'),
+        EntityFunction.find_by_title!('Shield'),
+        EntityFunction.find_by_title!('Deposit'),
+        EntityFunction.find_by_title!('Attach'),
+        EntityFunction.find_by_title!('Glue'),
+        EntityFunction.find_by_title!('Counteract')
+    ],
+    improved_parameters: [],
+    counteracting_parameters: [],
+    principles: [
+        Principle.find_by_title!('Taking out/extraction'),
+        Principle.find_by_title!('Preliminary anti-action'),
+        Principle.find_by_title!('Intermediary/Mediator'),
+        Principle.find_by_title!('Self-Service'),
+        Principle.find_by_title!('Cheap short-living objects'),
+        Principle.find_by_title!('Colour change')
+    ],
+    actions: [
+        EntityAction.find_by_title!('Increase the amount of substance'),
+        EntityAction.find_by_title!('Assemble substances'),
+        EntityAction.find_by_title!('Add structure'),
+        EntityAction.find_by_title!('Make static structure')
+    ],
+    children: []
+  },
+  { title: 'Layout of the web of orb-spiders',
+    description: "Concentric-and-radial layout of orb-spiders minimises the amount of material (silk) and covers maximum area.",
+    size: Size.find_by_title!('Centimetre'),
+    complexity: Complexity.find_by_title!('Molecule'),
+    environments: [
+        Environment.find_by_title!('Still'),
+        Environment.find_by_title!('Dynamic'),
+        Environment.find_by_title!('Permanent and static'),
+        Environment.find_by_title!('Temporal and dynamic')
+    ],
+    entity_functions: [
+        EntityFunction.find_by_title!('Modify natural object'),
+        EntityFunction.find_by_title!('Design'),
+        EntityFunction.find_by_title!('Build')
+    ],
+    improved_parameters: [
+        Parameter.find_by_title!('Area')
+    ],
+    counteracting_parameters: [
+        Parameter.find_by_title!('Quantity of substance')
+    ],
+    principles: [
+        Principle.find_by_title!('Spheroidality and Curvature'),
+        Principle.find_by_title!('Cheap short-living objects'),
+        Principle.find_by_title!('Rejecting, discarding-recovering, regenerating')
+    ],
+    actions: [
+        EntityAction.find_by_title!('Decrease the amount of substance'),
+        EntityAction.find_by_title!('Specialise structure')
+    ],
+    children: []
+  },
+  { title: 'Anaconda crawling with the help of unfolding skin scales.',
+    description: "One of the 'gaits' of anaconda comprises unfolding skin scales. The snake use them to increase friction with the substrate.",
+    size: Size.find_by_title!('Centimetre'),
+    complexity: Complexity.find_by_title!('Organ'),
+    environments: [
+        Environment.find_by_title!('Solid-liquid interface'),
+        Environment.find_by_title!('Solid-gas interface'),
+        Environment.find_by_title!('Solid-liquid-gas interface')
+    ],
+    entity_functions: [
+        EntityFunction.find_by_title!('Stabilise'),
+        EntityFunction.find_by_title!('Penetrate'),
+        EntityFunction.find_by_title!('Crawl'),
+        EntityFunction.find_by_title!('Fasten')
+    ],
+    improved_parameters: [
+        Parameter.find_by_title!('Friction')
+    ],
+    counteracting_parameters: [
+        Parameter.find_by_title!('Weight'),
+        Parameter.find_by_title!('Shape')
+    ],
+    principles: [
+        Principle.find_by_title!('Segmentation'),
+        Principle.find_by_title!('Local Quality'),
+        Principle.find_by_title!('Asymmetry'),
+        Principle.find_by_title!('Preliminary anti-action'),
+        Principle.find_by_title!('Dynamics'),
+        Principle.find_by_title!('Periodic action'),
+        Principle.find_by_title!('Self-Service'),
+        Principle.find_by_title!('Flexible shells and thin films')
+    ],
+    actions: [
+        EntityAction.find_by_title!('Introduce asymmetry to substance'),
+        EntityAction.find_by_title!('Adapt substance'),
+        EntityAction.find_by_title!('Specialise structure'),
+        EntityAction.find_by_title!('Make dynamic structure')
+    ],
+    children: []
+  },
+  { title: 'Leech locomotion',
+    description: "One of the locomotion modes of a leech is based on alternating attaching and detaching by anterior and posterior parts of the body.",
+    size: Size.find_by_title!('Centimetre'),
+    complexity: Complexity.find_by_title!('Organism'),
+    environments: [
+        Environment.find_by_title!('Solid-liquid interface')
+    ],
+    entity_functions: [
+        EntityFunction.find_by_title!('Invert'),
+        EntityFunction.find_by_title!('Walk'),
+        EntityFunction.find_by_title!('Attach')
+    ],
+    improved_parameters: [
+        Parameter.find_by_title!('Force')
+    ],
+    counteracting_parameters: [
+        Parameter.find_by_title!('Substance')
+    ],
+    principles: [
+        Principle.find_by_title!('Periodic action')
+    ],
+    actions: [
+        EntityAction.find_by_title!('Make dynamic structure'),
+        EntityAction.find_by_title!('Make it pulsate')
+    ],
+    children: []
+  },
+  { title: 'Seals sensors',
+    description: "Seals are categorized into three families: true seals, eared seals (common to most zoos), and walruses (found in the arctic). All of the seals in Antarctica are true seals (no ears). Even without ears, seal hearing out of the water is as good as human's. In the water, their hearing is even better. Its theorized that seals use a type of sonar to locate food, much like what dolphins and whales use.Структура внутренней части ушей у тюленей уникальна – так как под водой звуки Почки тюленей приспособлены к потреблению морской воды – они выделяют такой крепкий рассол, что соленая вода опресняется. поступают не через ушное отверстие, а через кости черепа – со всех сторон, то сухопутным млекопитающим очень трудно уловить направление откуда пришел звук. Внутреннее ухо тюленя как-бы подвешено внутри черепа, что помогает избавится от таких помех. В отличие от дельфинов и китов-орок тюлени не обладают искусством эхолокации и рассчитывают только на свои уши. In addition to using sonar for navigation and locating groups of food, its believed seals use their whiskers as a form of radar. The whiskers detect movement in the water and allow the seal to zoom in a particular object. Through the use of their sonar and radar, seals can actually find food in complete darkness better than in the light. As for their eyes, seals don't really see color but they are particularly sensitive to common sea water colors (greens, green-blues). Seals eyes have a silvery lining behind the retina, just like cats and other nocturnal/low-light hunters. This lining reflects the light back through the eye and increases the total amount of light absorbed by the eye--another necessary feature when hunting in the dimly lit depths of the oceans.",
+    size: Size.find_by_title!('Nano-scale'),
+    complexity: Complexity.find_by_title!('Molecule'),
+    environments: [],
+    entity_functions: [],
+    improved_parameters: [],
+    counteracting_parameters: [],
+    principles: [],
+    actions: [],
+    children: []
+  },
+  { title: 'Tuna',
+      description: "Тунец – трёхметровый гигант массой 300-400 кг, развивает скорость до 90 км/ час. Исследуя строение кожного покрова, ученые установили, что рыба достигает снижения сопротивления турбулентного трения при помощи слизистого вещества, выделяющегося из расположенных на поверхности слизистых клеток.",
+      size: Size.find_by_title!('Nano-scale'),
+      complexity: Complexity.find_by_title!('Molecule'),
+      environments: [],
+      entity_functions: [],
+      improved_parameters: [],
+      counteracting_parameters: [],
+      principles: [],
+      actions: [],
+      children: []
+  },
+  { title: 'seals eyes',
+    description: "одинаково хорошо видят и при ослепляющем блеске льдов и в темной пучине океана. Пот водой глаза тюленей выпячиваются, почти вылезая из орбит, а на ярком солнце зрачки сужаются в узкие щелки, как у кошек. Глаза тюленей также сходны с кошачьими тем, что они светятся в темноте – сетчатка покрыта зеркальным слоем, помогающим уловить слабый свет под водой.",
+    size: Size.find_by_title!('Nano-scale'),
+    complexity: Complexity.find_by_title!('Molecule'),
+    environments: [],
+    entity_functions: [],
+    improved_parameters: [],
+    counteracting_parameters: [],
+    principles: [],
+    actions: [],
+    children: []
+  },
+  { title: 'Protective froth of froghoppers',
+    description: "To protect eggs from predators and unfavourable weather conditions froghoppers cover them with durable liquid froth.",
+    size: Size.find_by_title!('Centimetre'),
+    complexity: Complexity.find_by_title!('Molecule'),
+    environments: [
+        Environment.find_by_title!('Solid-gas interface')
+    ],
+    entity_functions: [
+        EntityFunction.find_by_title!('Build'),
+        EntityFunction.find_by_title!('Protect'),
+        EntityFunction.find_by_title!('Cover')
+    ],
+    improved_parameters: [],
+    counteracting_parameters: [],
+    principles: [
+        Principle.find_by_title!('Segmentation'),
+        Principle.find_by_title!('Local Quality'),
+        Principle.find_by_title!('Preliminary anti-action'),
+        Principle.find_by_title!('Intermediary/Mediator'),
+        Principle.find_by_title!('Cheap short-living objects'),
+        Principle.find_by_title!('Pneumatics and hydraulics'),
+        Principle.find_by_title!('Flexible shells and thin films'),
+        Principle.find_by_title!('Porous materials'),
+        Principle.find_by_title!('Rejecting, discarding-recovering, regenerating')
+    ],
+    actions: [
+        EntityAction.find_by_title!('Fragment substance'),
+        EntityAction.find_by_title!('Adapt substance'),
+        EntityAction.find_by_title!('Add structure'),
+        EntityAction.find_by_title!('Make static structure'),
+        EntityAction.find_by_title!('Separate, isolate space')
+    ],
+    children: []
+  },
+  { title: 'Regular grazing pattern of mollusc Tonicella marmorea',
+    description: "To collect food items from the solid surface mollusc Tonicella marmorea make circular trajectory and returns to the starting point. Then it begins the next circle of the same size but slightly shifted aside. As a result of this strategy the whole grazing area appears to be processed.",
+    size: Size.find_by_title!('Centimetre'),
+    complexity: Complexity.find_by_title!('Organism'),
+    environments: [
+        Environment.find_by_title!('Solid-liquid-gas interface')
+    ],
+    entity_functions: [
+        EntityFunction.find_by_title!('Feed'),
+        EntityFunction.find_by_title!('Migrate'),
+        EntityFunction.find_by_title!('Crawl'),
+        EntityFunction.find_by_title!('Graze')
+    ],
+    improved_parameters: [
+        Parameter.find_by_title!('Area'),
+        Parameter.find_by_title!('Distribution'),
+        Parameter.find_by_title!('Productivity')
+    ],
+    counteracting_parameters: [
+        Parameter.find_by_title!('Area')
+    ],
+    principles: [
+        Principle.find_by_title!('Spheroidality and Curvature'),
+        Principle.find_by_title!('Dynamics'),
+        Principle.find_by_title!('Periodic action')
+    ],
+    actions: [
+        EntityAction.find_by_title!('Make dynamic structure'),
+        EntityAction.find_by_title!('Introduce symmetry in space'),
+        EntityAction.find_by_title!('Introduce asymmetry in space'),
+        EntityAction.find_by_title!('Make it regular')
+    ],
+    children: []
+  },
+  { title: "Fugu fish's body volume increse",
+    description: "Fugu fish in case of threat increases its volume changing the whole body into sphere covered with spikes.",
+    size: Size.find_by_title!('Centimetre'),
+    complexity: Complexity.find_by_title!('Organism'),
+    environments: [
+        Environment.find_by_title!('Fluid')
+    ],
+    entity_functions: [
+        EntityFunction.find_by_title!('Protect'),
+        EntityFunction.find_by_title!('Repell'),
+        EntityFunction.find_by_title!('Defend')
+    ],
+    improved_parameters: [
+        Parameter.find_by_title!('Volume')
+    ],
+    counteracting_parameters: [
+        Parameter.find_by_title!('Quantity of substance')
+    ],
+    principles: [
+        Principle.find_by_title!('Spheroidality and Curvature'),
+        Principle.find_by_title!('Dynamics'),
+        Principle.find_by_title!('Skipping/Rushing through'),
+        Principle.find_by_title!('Pneumatics and hydraulics'),
+        Principle.find_by_title!('Flexible shells and thin films')
+    ],
+    actions: [
+        EntityAction.find_by_title!('Increase space')
+    ],
+    children: []
+  },
+  { title: 'Stinging mechanism of nettle',
+    description: "Stinging mechanism of nettle is based on the large number of small ampules with sharp and brittle tips that penetrate the skin of a victim, break off and emit liquid irritating poison.",
+    size: Size.find_by_title!('Millimetre'),
+    complexity: Complexity.find_by_title!('System of organs'),
+    environments: [
+        Environment.find_by_title!('Gas'),
+        Environment.find_by_title!('Still'),
+        Environment.find_by_title!('Dynamic')
+    ],
+    entity_functions: [
+        EntityFunction.find_by_title!('Repell'),
+        EntityFunction.find_by_title!('Resist'),
+        EntityFunction.find_by_title!('Penetrate'),
+        EntityFunction.find_by_title!('Transmit'),
+        EntityFunction.find_by_title!('Poison')
+    ],
+    improved_parameters: [
+        Parameter.find_by_title!('Quantity of substance'),
+        Parameter.find_by_title!('Permeability'),
+        Parameter.find_by_title!('Brittleness')
+    ],
+    counteracting_parameters: [
+        Parameter.find_by_title!('Quantity of substance'),
+        Parameter.find_by_title!('Area')
+    ],
+    principles: [
+        Principle.find_by_title!('Local Quality'),
+        Principle.find_by_title!('Feedback'),
+        Principle.find_by_title!('Intermediary/Mediator'),
+        Principle.find_by_title!('Self-Service'),
+        Principle.find_by_title!('Cheap short-living objects'),
+        Principle.find_by_title!('Strong oxidants')
+    ],
+    actions: [
+        EntityAction.find_by_title!('Destroy substance')
+    ],
+    children: []
+  },
+  { title: 'Autotomy of a lizard',
+    description: "A lizard can sacrifice its tail by autotomy",
+    size: Size.find_by_title!('Centimetre'),
+    complexity: Complexity.find_by_title!('System of organ'),
+    environments: [
+        Environment.find_by_title!('Solid-gas interface')
+    ],
+    entity_functions: [
+        EntityFunction.find_by_title!('Protect'),
+        EntityFunction.find_by_title!('Escape'),
+        EntityFunction.find_by_title!('Deception'),
+        EntityFunction.find_by_title!('Self-destruct'),
+        EntityFunction.find_by_title!('Break'),
+        EntityFunction.find_by_title!('Compress')
+    ],
+    improved_parameters: [
+        Parameter.find_by_title!('Brittleness'),
+        arameter.find_by_title!('Adaptability')
+    ],
+    counteracting_parameters: [
+        Parameter.find_by_title!('Dencity'),
+        Parameter.find_by_title!('Strength')
+    ],
+    principles: [
+        Principle.find_by_title!('Local Quality'),
+        Principle.find_by_title!('Preliminary action'),
+        Principle.find_by_title!('Blessing in disguise - turn harm into benefit'),
+        Principle.find_by_title!('Feedback'),
+        Principle.find_by_title!('Self-Service'),
+        Principle.find_by_title!('Rejecting, discarding-recovering, regenerating')
+    ],
+    actions: [
+        EntityAction.find_by_title!('Dissemble structures')
+    ],
+    children: []
+  },
+  { title: 'Peristalsis of an intestine',
+    description: "Directed transportation of a liquid, solid, semi-liquid bodies along a tubular soft pipe (intestine) due to the travelling wave of the sequential circular contractions and relaxations of an intestine (reducing and increasing the diameter of a pipe).",
+    size: Size.find_by_title!('Metre'),
+    complexity: Complexity.find_by_title!('Organ'),
+    environments: [
+        Environment.find_by_title!('Composite'),
+        Environment.find_by_title!('None-uniform'),
+        Environment.find_by_title!('Moving'),
+        Environment.find_by_title!('With inclusions')
+    ],
+    entity_functions: [
+        EntityFunction.find_by_title!('Transport'),
+        EntityFunction.find_by_title!('Convey')
+    ],
+    improved_parameters: [
+        Parameter.find_by_title!('Velocity')
+    ],
+    counteracting_parameters: [
+        Parameter.find_by_title!('Mass'),
+        Parameter.find_by_title!('Dencity'),
+        Parameter.find_by_title!('Viscosity')
+    ],
+    principles: [
+        Principle.find_by_title!('Local Quality'),
+        Principle.find_by_title!('Dynamics'),
+        Principle.find_by_title!('Periodic action'),
+        Principle.find_by_title!('Pneumatics and hydraulics'),
+        Principle.find_by_title!('Flexible shells and thin films')
+    ],
+    actions: [
+        EntityAction.find_by_title!('Make it pulsate')
+    ],
+    children: []
+  },
+  { title: 'Rotation of the inflorescence of a sunflower',
+    description: "The inflorescence of a sunflower rotates following the trajectory of the Sun",
+    size: Size.find_by_title!('Centimetre'),
+    complexity: Complexity.find_by_title!('System of organs'),
+    environments: [
+        Environment.find_by_title!('Still'),
+        Environment.find_by_title!('Dynamic')
+    ],
+    entity_functions: [
+        EntityFunction.find_by_title!('Regulate'),
+        EntityFunction.find_by_title!('Inform'),
+        EntityFunction.find_by_title!('Sense'),
+        EntityFunction.find_by_title!('React'),
+        EntityFunction.find_by_title!('Compensate'),
+        EntityFunction.find_by_title!('Counteract'),
+        EntityFunction.find_by_title!('Regulate light'),
+        EntityFunction.find_by_title!('Illuminate')
+    ],
+    improved_parameters: [
+        Parameter.find_by_title!('Luminance'),
+        Parameter.find_by_title!('Intensity'),
+        Parameter.find_by_title!('light (visible, infrared, ultraviolet)'),
+        Parameter.find_by_title!('Adaptability')
+    ],
+    counteracting_parameters: [
+        Parameter.find_by_title!('Stiffness')
+    ],
+    principles: [
+        Principle.find_by_title!('Dynamics'),
+        Principle.find_by_title!('Continuity of useful action'),
+        Principle.find_by_title!('Feedback'),
+        Principle.find_by_title!('Self-Service'),
+        Principle.find_by_title!('Pneumatics and hydraulics'),
+        Principle.find_by_title!('Porous materials')
+    ],
+    actions: [
+        EntityAction.find_by_title!('Modify substance/matter'),
+        EntityAction.find_by_title!('Introduce asymmetry to substance'),
+        EntityAction.find_by_title!('Move substance'),
+        EntityAction.find_by_title!('Make dynamic structure'),
+        EntityAction.find_by_title!('Adapt, vary, adjust information')
+    ],
+    children: []
+  },
+  { title: 'Piloerection as one of the thermoregulation mechanisms',
+    description: "Piloerection or pilomotoric reflex in mammals is the response to low air temperature manifested as hair/fur erection. This increases the volume of air in the layer of fur, which improves thermoisolation of the animal's body.",
+    size: Size.find_by_title!('Centimetre'),
+    complexity: Complexity.find_by_title!('System of organs'),
+    environments: [
+        Environment.find_by_title!('Still'),
+        Environment.find_by_title!('Dynamic')
+    ],
+    entity_functions: [
+        EntityFunction.find_by_title!('Protect'),
+        EntityFunction.find_by_title!('Cover'),
+        EntityFunction.find_by_title!('Manipulate'),
+        EntityFunction.find_by_title!('Lift'),
+        EntityFunction.find_by_title!('React'),
+        EntityFunction.find_by_title!('Reflex'),
+        EntityFunction.find_by_title!('Compensate'),
+        EntityFunction.find_by_title!('Regulate temperature'),
+        EntityFunction.find_by_title!('Adjust'),
+        EntityFunction.find_by_title!('Insulate')
+    ],
+    improved_parameters: [
+        Parameter.find_by_title!('Density'),
+        Parameter.find_by_title!('Shape'),
+        Parameter.find_by_title!('Adaptability'),
+        Parameter.find_by_title!('Regulation')
+    ],
+    counteracting_parameters: [
+        Parameter.find_by_title!('Volume')
+    ],
+    principles: [
+        Principle.find_by_title!('Preliminary anti-action'),
+        Principle.find_by_title!('Dynamics'),
+        Principle.find_by_title!('Another dimension'),
+        Principle.find_by_title!('Feedback'),
+        Principle.find_by_title!('Intermediary/Mediator'),
+        Principle.find_by_title!('Self-Service')
+    ],
+    actions: [
+        EntityAction.find_by_title!('Move substance'),
+        EntityAction.find_by_title!('Make dynamic structure')
+    ],
+    children: []
+  },
+  { title: 'Anabiosis',
+    description: "The unfavourable environmental conditions causes anabiosis (hibernation in low temperatures and aestivation in high temperatures) in many plant and animal species.",
+    size: Size.find_by_title!('Centimetre'),
+    complexity: Complexity.find_by_title!('Organism'),
+    environments: [
+        Environment.find_by_title!('Solid-liquid interface'),
+        Environment.find_by_title!('Solid-gas interface')
+    ],
+    entity_functions: [
+        EntityFunction.find_by_title!('Protect'),
+        EntityFunction.find_by_title!('React'),
+        EntityFunction.find_by_title!('Compensate'),
+        EntityFunction.find_by_title!('Regulate temperature'),
+        EntityFunction.find_by_title!('Cool')
+    ],
+    improved_parameters: [
+        Parameter.find_by_title!('Energy/Field')
+    ],
+    counteracting_parameters: [
+        Parameter.find_by_title!('Freezing')
+    ],
+    principles: [
+        Principle.find_by_title!('Preliminary anti-action'),
+        Principle.find_by_title!('Partial or excessive action, Abundance'),
+        Principle.find_by_title!('Blessing in disguise - turn harm into benefit'),
+        Principle.find_by_title!('Feedback')
+    ],
+    actions: [
+        EntityAction.find_by_title!('Decrease energy parameter')
+    ],
+    children: []
+  },
+  { title: 'Various tropisms and taxes',
+    description: "A gradient of any factor can cause positive or negative tropism (in plants) or taxis (in animals).",
+    size: Size.find_by_title!('Centimetre'),
+    complexity: Complexity.find_by_title!('Organism'),
+    environments: [
+        Environment.find_by_title!('Solid'),
+        Environment.find_by_title!('Liquid'),
+        Environment.find_by_title!('Solid-liquid interface'),
+        Environment.find_by_title!('Solid-gas interface'),
+        Environment.find_by_title!('Solid-liquid-gas interface'),
+        Environment.find_by_title!('Liquid-gas interface'),
+        Environment.find_by_title!('Gas')
+    ],
+    entity_functions: [
+        EntityFunction.find_by_title!('Locomote'),
+        EntityFunction.find_by_title!('Orient'),
+        EntityFunction.find_by_title!('Crawl'),
+        EntityFunction.find_by_title!('Walk'),
+        EntityFunction.find_by_title!('Climb'),
+        EntityFunction.find_by_title!('Burrow'),
+        EntityFunction.find_by_title!('Turn'),
+        EntityFunction.find_by_title!('Swim'),
+        EntityFunction.find_by_title!('Drift'),
+        EntityFunction.find_by_title!('Inform'),
+        EntityFunction.find_by_title!('Sense'),
+        EntityFunction.find_by_title!('React'),
+        EntityFunction.find_by_title!('Response'),
+        EntityFunction.find_by_title!('Compensate')
+    ],
+    improved_parameters: [
+        Parameter.find_by_title!('Location'),
+        Parameter.find_by_title!('Detection'),
+        Parameter.find_by_title!('Adaptability'),
+        Parameter.find_by_title!('Regulation')
+    ],
+    counteracting_parameters: [
+        Parameter.find_by_title!('Quantity of substance'),
+        Parameter.find_by_title!('Dencity'),
+        Parameter.find_by_title!('Shape'),
+        Parameter.find_by_title!('Composition'),
+        Parameter.find_by_title!('Degree of freedom')
+    ],
+    principles: [
+        Principle.find_by_title!('Asymmetry'),
+        Principle.find_by_title!('Preliminary anti-action'),
+        Principle.find_by_title!('Preliminary action'),
+        Principle.find_by_title!('Dynamics'),
+        Principle.find_by_title!('Feedback'),
+        Principle.find_by_title!('Self-Service')
+    ],
+    actions: [
+        EntityAction.find_by_title!('Introduce asymmetry to substance'),
+        EntityAction.find_by_title!('Stabilise energy parameter'),
+        EntityAction.find_by_title!('Vary, make adaptable energy or field'),
+        EntityAction.find_by_title!('Increase dynamics in information/regulation')
+    ],
+    children: []
+  },
+  { title: 'Decreasing turbulence with the help of fibrous material cover of a surface',
+    description: "Soft and long fibrous materials (fur, hair, feathers, etc) - when they cover a surface - decrease the turbulence of a fluid (gas or liquid).",
+    size: Size.find_by_title!('Centimetre'),
+    complexity: Complexity.find_by_title!('System of organs'),
+    environments: [
+        Environment.find_by_title!('Liquid'),
+        Environment.find_by_title!('Fluid'),
+        Environment.find_by_title!('Gas'),
+        Environment.find_by_title!('Dynamic')
+    ],
+    entity_functions: [
+        EntityFunction.find_by_title!('Convert'),
+        EntityFunction.find_by_title!('Conform'),
+        EntityFunction.find_by_title!('Sense'),
+        EntityFunction.find_by_title!('React'),
+        EntityFunction.find_by_title!('Compensate')
+    ],
+    improved_parameters: [
+        Parameter.find_by_title!('Velocity'),
+        Parameter.find_by_title!('Composition'),
+        Parameter.find_by_title!('Degree of freedom'),
+        Parameter.find_by_title!('Adaptability')
+    ],
+    counteracting_parameters: [
+        Parameter.find_by_title!('Dencity'),
+        Parameter.find_by_title!('Viscosity'),
+        Parameter.find_by_title!('Shape'),
+        Parameter.find_by_title!('Friction')
+    ],
+    principles: [
+        Principle.find_by_title!('Local Quality'),
+        Principle.find_by_title!('Dynamics'),
+        Principle.find_by_title!('Another dimension'),
+        Principle.find_by_title!('Feedback'),
+        Principle.find_by_title!('Self-Service')
+    ],
+    actions: [
+        EntityAction.find_by_title!('Move substance'),
+        EntityAction.find_by_title!('Adapt substance'),
+        EntityAction.find_by_title!('Make dynamic structure')
+    ],
+    children: []
+  },
+  { title: 'Decreasing drag with the help of turbulence in water',
+    description: "Decreasing drag with the help of turbulence of a series of whirlpools along the surface of the body of a shark. The surface of the shark's skin is covered with the micro-relief, which makes the whole plane micro-corrugated.",
+    size: Size.find_by_title!('Centimetre'),
+    complexity: Complexity.find_by_title!('Organ'),
+    environments: [
+        Environment.find_by_title!('Liquid'),
+        Environment.find_by_title!('Fluid'),
+        Environment.find_by_title!('Stream')
+    ],
+    entity_functions: [
+        EntityFunction.find_by_title!('Make'),
+        EntityFunction.find_by_title!('Modify natural object'),
+        EntityFunction.find_by_title!('Locomote'),
+        EntityFunction.find_by_title!('Roll'),
+        EntityFunction.find_by_title!('Swim'),
+        EntityFunction.find_by_title!('Flow'),
+        EntityFunction.find_by_title!('React'),
+        EntityFunction.find_by_title!('Compensate')
+    ],
+    improved_parameters: [
+        Parameter.find_by_title!('Velocity'),
+        Parameter.find_by_title!('Adaptability')
+    ],
+    counteracting_parameters: [
+        Parameter.find_by_title!('Dencity'),
+        Parameter.find_by_title!('Viscosity'),
+        Parameter.find_by_title!('Friction')
+    ],
+    principles: [
+        Principle.find_by_title!('Segmentation'),
+        Principle.find_by_title!('Local Quality'),
+        Principle.find_by_title!('The other way round'),
+        Principle.find_by_title!('Spheroidality and Curvature'),
+        Principle.find_by_title!('Dynamics'),
+        Principle.find_by_title!('Blessing in disguise - turn harm into benefit'),
+        Principle.find_by_title!('Intermediary/Mediator'),
+        Principle.find_by_title!('Self-Service'),
+        Principle.find_by_title!('Cheap short-living objects'),
+        Principle.find_by_title!('Homogeneity'),
+        Principle.find_by_title!('Rejecting, discarding-recovering, regenerating')
+    ],
+    actions: [
+        EntityAction.find_by_title!('Fragment substance'),
+        EntityAction.find_by_title!('Move substance'),
+        EntityAction.find_by_title!('Adapt substance'),
+        EntityAction.find_by_title!('Make dynamic structure')
+    ],
+    children: []
+  },
+  { title: 'Decreasing drag with the help of turbulence in the air',
+    description: "Drag can be reduced by making flow of the air laminar. Cross-section of a wing of a dragon-fly shows its corrugated structure. Air moving across the ridges creates whirlpools that play role of 'rollers' that provide the laminar movement of the air.",
+    size: Size.find_by_title!('Millimetre'),
+    complexity: Complexity.find_by_title!('Organ'),
+    environments: [
+        Environment.find_by_title!('Solid-gas interface'),
+        Environment.find_by_title!('Dynamic'),
+        Environment.find_by_title!('Temporal and dynamic')
+    ],
+    entity_functions: [
+        EntityFunction.find_by_title!('Produce'),
+        EntityFunction.find_by_title!('Form'),
+        EntityFunction.find_by_title!('Make'),
+        EntityFunction.find_by_title!('Modify natural object'),
+        EntityFunction.find_by_title!('Locomote'),
+        EntityFunction.find_by_title!('Roll'),
+        EntityFunction.find_by_title!('Fly'),
+        EntityFunction.find_by_title!('Glide')
+    ],
+    improved_parameters: [
+        Parameter.find_by_title!('Velocity'),
+        Parameter.find_by_title!('Adaptability')
+    ],
+    counteracting_parameters: [
+        Parameter.find_by_title!('Viscosity'),
+        Parameter.find_by_title!('Friction')
+    ],
+    principles: [
+        Principle.find_by_title!('Local Quality'),
+        Principle.find_by_title!('The other way round'),
+        Principle.find_by_title!('Dynamics'),
+        Principle.find_by_title!('Another dimension'),
+        Principle.find_by_title!('Blessing in disguise - turn harm into benefit'),
+        Principle.find_by_title!('Intermediary/Mediator'),
+        Principle.find_by_title!('Self-Service'),
+        Principle.find_by_title!('Flexible shells and thin films'),
+        Principle.find_by_title!('Homogeneity')
+    ],
+    actions: [
+        EntityAction.find_by_title!('Fragment space'),
+        EntityAction.find_by_title!('Move substance'),
+        EntityAction.find_by_title!('Adapt substance'),
+        EntityAction.find_by_title!('Make dynamic structure')
     ],
     children: []
   }
