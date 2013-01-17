@@ -694,7 +694,7 @@ actions = [
     ] }
 ]
 
-populate_hierarchical EntityAction, actions # обрати внимание на имя модели
+populate_hierarchical EntityAction, actions
 
 entities = [
   { title: 'Hoverfly "walks" on vortices that are created by its wings',
