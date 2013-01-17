@@ -677,7 +677,7 @@ actions = [
         {title: 'Stabilise energy parameter', description: "", children: []},
         {title: 'Vary, make adaptable energy or field', description: "", children: []}
     ] },
-  { title: 'Modify information', "Use or modify the regulation, information exchange, detecting, measuring, adapting issues, positive and negative feed-back and feed-forward, communication, etc.",
+  { title: 'Modify information',description: "Use or modify the regulation, information exchange, detecting, measuring, adapting issues, positive and negative feed-back and feed-forward, communication, etc.",
     children: [
         {title: 'Increase, add information', description: "", children: []},
         {title: 'Decrease information parameter', description: "", children: []},
